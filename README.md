@@ -4,6 +4,7 @@
 >
 > - 아직 django 를 적용할 필요는 없을 것 같다. 대회에서 정해진 폼이 있으니 거기에 html css 만 작성해서 올려놓으면 될 듯, 나중에 필요하면 템플릿에 그대로 붙여넣으면 되니까!
 > - 그러니 sample 폴더에 index.html 이랑 style.css 정도만 일단 만들어둘게. 이미지 파일 필요한건 img 폴더에 일괄 정리해두자. 나중에 static 폴더로 옮기기 편하게
+> - [구글 독스에 정리해 둔 것](https://docs.google.com/document/d/1hGRV2eOud-SDcDHhsRcfW7hw5SqUet7GpFJCk-gmXRs/edit?ts=5f170b43)
 
 ## 1. 개요
 

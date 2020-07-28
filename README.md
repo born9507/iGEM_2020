@@ -217,3 +217,19 @@ $(document).ready(function() {
 
 - ex)  T--Team:Korea-SIS--photo.png 
 
+
+
+#### 사진 html 에서 불러오기
+
+URL이 어떤식으로 지정되지..? 이거 업로드 해봐야 알겠다.
+
+```
+<img src="image URL "> 
+```
+
+```
+<video width="100%" height="240" controls>
+<source src="https://2018.igem.org/wiki/images/f/fe/IGEM_Human_Practices.mp4" type="video/mp4">
+</video>
+```
+

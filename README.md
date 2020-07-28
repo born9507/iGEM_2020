@@ -1,10 +1,11 @@
-# iGEM_2020
+# iGEM_2020 (KOREA_SIS)
 
 > **공지사항**
 >
 > - 아직 django 를 적용할 필요는 없을 것 같다. 대회에서 정해진 폼이 있으니 거기에 html css 만 작성해서 올려놓으면 될 듯, 나중에 필요하면 템플릿에 그대로 붙여넣으면 되니까!
 > - 그러니 sample 폴더에 index.html 이랑 style.css 정도만 일단 만들어둘게. 이미지 파일 필요한건 img 폴더에 일괄 정리해두자. 나중에 static 폴더로 옮기기 편하게
 > - 구글 문서 링크: https://docs.google.com/document/d/1hGRV2eOud-SDcDHhsRcfW7hw5SqUet7GpFJCk-gmXRs/edit?ts=5f170b43
+> - 페이지 수정 링크 https://2020.igem.org/Team:Korea-SIS 
 
 ## 1. 개요
 
@@ -68,6 +69,20 @@ iGEM 2020 대회 수상을 위한 **연구 실적 정리** 위키 페이지 제�
 
 
 
+#### 사이트 URL 구조도
+
+```http
+https://2020.igem.org/Team:KOREA_SIS
+	/Team
+	/Project
+	/Human_Practices
+	/Awards
+	/Safety
+	
+```
+
+
+
 ## 2. 일정
 
 10월까지 협업? 
@@ -109,3 +124,96 @@ https://2019.igem.org/Team:SIS_Korea
 기타 참고작
 
 https://2019.igem.org/Team:TU_Kaiserslautern/Parts
+
+
+
+## 5. 업로드 방법
+
+#### 페이지 업로드 방법
+
+- https://2020.igem.org/Team:Korea-SIS  에 접속
+- 로그인
+- wiki tools - Edit
+- html 소스 코드 수정하면 된다!
+
+
+
+#### CSS, JS 파일 적용 방법 
+
+#### <방법 1>
+
+html 소스 코드 내에 style 태그랑 script 태그 사용
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="button" id="hw" value="Hello world" />
+    <script type="text/javascript">
+        var hw = document.getElementById('hw');
+        hw.addEventListener('click', function(){
+            alert('Hello world');
+        })
+    </script>
+    <style>
+      h1 {
+        color: blue;
+      }
+    </style>
+  </body>
+</html>
+```
+
+
+
+#### <방법 2> 이 방법을 쓰자!
+
+CSS 파일, JS 파일 따로 업로드 하는 방법
+
+##### 2020.igem.org/Template:TeamName/CSS
+
+```css
+<style>
+/*Make text red and bold*/
+.red_text {
+    color: #f42434;
+    font-weight:bold;
+}
+</style>
+```
+
+##### 2020.igem.org/Template:TeamName/JS
+
+```js
+<script>
+$(document).ready(function() {
+    $("#alert").addClass("red_text");
+});
+</script>
+```
+
+##### 2020.igem.org/Team:TeamName/Project
+
+```html
+{{TeamName/CSS}}
+<html>
+  <h2> Our Project </h2>
+  <p> Beginning of the page about our project.</p>
+</html>
+{{TeamName/JS}}
+```
+
+
+
+
+
+#### 사진 업로드 방법
+
+- 업로드 사이트 접속 https://2020.igem.org/Special:Upload
+
+- **T--OFFICIAL team name--File_name** 의 형식으로 업로드
+
+  ![img](https://2019.igem.org/wiki/images/7/7d/Uploading_a_file.png)
+
+- ex)  T--Team:Korea-SIS--photo.png 
+

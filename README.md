@@ -12,59 +12,38 @@
 iGEM 2020 대회 수상을 위한 **연구 실적 정리** 위키 페이지 제작
 
 1. Home 
-   1. Project name, team name 
-   2. team 사진
-   3. Abstract 
-
-2. Team 
-
-   1.  Members
-
-      1. Team 소개글 
-      2. Team 사진 
-      3. member 사진 
-      4. Final words
-
-   2. Collaborations
-
-      1. other igem teams
-
-         KUAS 
-
-         Indonesia (team name)
-
-      2. Meet up
-
-         KUAS 진하
-
-      3. Attribution
-
-         Individual contributions 
-
-         Instructors
-
-         Advisors
-
-         Additional feedback
-
-         Other help(Web designer)
-
+   1. teamPhoto
+   2. abstract
+2. Team
+   1. teamIntro
+   2. teamPhoto
+   3. members 
+      1. Taejoo
+      2. Hanjoo
+      3. Ian
+      4. Sarah
+      5. Clara
+      6. Brian
+   4. Collaborations
+      1. otherTeams
+      2. meetUp
+      3. attribution
 3. Project
 
    1.  Description / Inspiration
-   2. Design 
-   3. (Modeling)
-
+       1.  background
+       2.  inspiration
+   2.  Design 
+   3.  Modeling
+   4.  Proposed_Implementation
 4. Human practices
 
    1. Introduction 
-   2. campaign  
-   3. Interviews 
-   4. Survey analysis
-   5. Integrated Human practices Ian
-
+   2. Campaign  
+   3. Education
+   4. Interviews 
+   5. Survey_Analysis
 5. Awards 
-
 6. Safety 
 
 
@@ -73,21 +52,55 @@ iGEM 2020 대회 수상을 위한 **연구 실적 정리** 위키 페이지 제�
 
 ```http
 https://2020.igem.org/Team:KOREA_SIS
-	/Team
-	/Project
-	/Human_Practices
-	/Awards
-	/Safety
-	
+https://2020.igem.org/Team:KOREA_SIS/Team
+https://2020.igem.org/Team:KOREA_SIS/Project
+https://2020.igem.org/Team:KOREA_SIS/Human_Practices
+https://2020.igem.org/Team:KOREA_SIS/Awards
+https://2020.igem.org/Team:KOREA_SIS/Safety
 ```
 
 
 
 ## 2. 일정
 
-10월까지 협업? 
+8/2 디자인 초안
 
-정확한 기한 정해지면 추가
+
+
+—— 뼈대(8월초)
+
+index.html/
+Home.html/
+Team.html/
+Project.html/
+->상원 html 내용 구조 추가
+
+Human practices.html/
+Awards.html/
+Safety.html/
+->민지 html 내용 구조 추가
+
+
+CSS 들어가기 전에 XD로 대강 디자인 컨셉을 잡아서 보여주고 수정할거있음 같이 수정해봅시다!
+
+—— 디자인(8월말)
+
+Index.html/
+Home.html/
+Team.html/
+Project.html/
+->민지  css 적용
+
+Human practices.html/
+Awards.html/
+Safety.html/
+->상원 css적용
+
+—— 추가수정  (9월초)
+
+자바스크립트 모션 등
+
+——완성(10월말)
 
 
 

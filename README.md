@@ -246,3 +246,40 @@ URL이 어떤식으로 지정되지..? 이거 업로드 해봐야 알겠다.
 </video>
 ```
 
+
+
+### 그냥 참고
+
+
+
+- Home
+- Team
+  - Team
+  - Attributions
+  - Collaborations
+  - Inclusion
+- Project
+  - Contriubution
+  - Description
+  - Design
+  - Engineering
+  - Experiments
+  - Notebook
+  - Partnership
+  - Proof of Concept
+  - Results
+- Parts
+  - Part Collection
+  - Parts
+  - Improve
+- Safety
+- Human Practices
+- Awards
+  - Education
+  - Entrepreneurship
+  - Hardware
+  - Measurement
+  - Model
+  - Plant
+  - Software
+  - Sustainable

@@ -153,13 +153,20 @@ https://2019.igem.org/Team:TU_Kaiserslautern/Parts
 
 #### CSS, JS 파일 적용 방법 
 
-#### <방법 1>
+#### <방법 1> 이 방법을 쓰자!
 
 html 소스 코드 내에 style 태그랑 script 태그 사용
 
 ```html
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      h1 {
+        color: blue;
+      }
+    </style>
+  </head>
   <body>
     <input type="button" id="hw" value="Hello world" />
     <script type="text/javascript">
@@ -168,18 +175,13 @@ html 소스 코드 내에 style 태그랑 script 태그 사용
             alert('Hello world');
         })
     </script>
-    <style>
-      h1 {
-        color: blue;
-      }
-    </style>
   </body>
 </html>
 ```
 
 
 
-#### <방법 2> 이 방법을 쓰자!
+#### <방법 2> 
 
 CSS 파일, JS 파일 따로 업로드 하는 방법
 
@@ -228,7 +230,7 @@ $(document).ready(function() {
 
   ![img](https://2019.igem.org/wiki/images/7/7d/Uploading_a_file.png)
 
-- ex)  T--Team:Korea-SIS--photo.png 
+- ex)  T--Korea-SIS--photo.png 
 
 
 

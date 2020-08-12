@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
   </head>
   <style type="text/css">
-    /* ---------기본 설정 -------------------------------------- */
+   /* ---------기본 설정 -------------------------------------- */
     #sideMenu, #top_title, .patrollink, #firstHeading, #home_logo, #sideMenu { 
       display:none; 
     }
@@ -43,11 +43,14 @@
       justify-content: space-between;
       align-items: center;
       background-color: #232700;
+      position:relative;
     }
 
     img.logo{
       width: 150px;
       height: 150px;
+      position:relative;
+      left:5%;
     }
 
     .home-header{
@@ -59,11 +62,13 @@
     }
 
     .home-header a{
+      position:relative;
       padding: 15px;
       color: #C0BB87;
       font-size: 20pt;
       font-family: 'Work Sans';
       font-weight: 650;
+      transition: all 0.3s ease 0s;
     }
 
     .home-header a:hover{
@@ -74,27 +79,40 @@
       font-weight: 650;
       background-color: #C0BB87;
       border-radius: 5px;
+      {% comment %} box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1); {% endcomment %}
+      transform: translateY(-10px);
     }
 
     .mainCategory{
       display: flex;
       flex-direction:column;
       align-items: center;
+      width:80%;
+      margin: 0 auto;
     }
+
     .mainCategory img{
-      width: 50%;
+      width: 80%;
       padding: 20px;
     }
 
     .sidenav{
-      width: 40%;
+      width: 15%;
       background-color: #C0BB87;
-      margin: 30px;
+      border-radius:5px;
+      margin: 25px;
     }
 
     .page{
       display: flex;
       justify-content: space-between;
+    }
+
+    .main-page{
+      display:flex;
+      flex-direction:column;
+      margin: 25px;
+      width:75%;
     }
   </style>
 

@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Work+Sans:wght@600;700&display=swap" rel="stylesheet">
   </head>
   <style type="text/css">
-   /* ---------기본 설정 -------------------------------------- */
+    /* ---------기본 설정 -------------------------------------- */
     #sideMenu, #top_title, .patrollink, #firstHeading, #home_logo, #sideMenu { 
       display:none; 
     }
@@ -46,12 +46,14 @@
       justify-content: space-between;
       align-items: center;
       background-color: #232700;
-      position:relative;
+      height: 140px;
+      width:100%;
+      position:fixed;
+      z-index:10;
     }
 
     img.logo{
-      width: 150px;
-      height: 150px;
+      height: 100%;
       position:relative;
       left:5%;
     }
@@ -85,8 +87,16 @@
       transform: translateY(-10px);
     }
 
+    .page{
+      display: flex;
+      justify-content: space-between;
+      position:relative;
+      top:140px;}
+
     .main-page{
       display:flex;
+      position:relative;
+      left: 20%;
       flex-direction:column;
       margin: 25px;
       width:75%;}
@@ -112,17 +122,13 @@
     }
 
     .sidenav{
-      width: 15%;
+      position: fixed;
+      width:14%;
+      height:80%;
       background-color: #C0BB87;
       border-radius:5px;
       margin: 25px;
     }
-
-    .page{
-      display: flex;
-      justify-content: space-between;
-    }
-    
   </style>
 
   <body>

@@ -2,7 +2,9 @@
   <head>
     <meta charset="utf-8">
     <title>Satety</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Work+Sans:wght@600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Work+Sans:wght@600&display=swap" rel="stylesheet">
+
     <style type="text/css">
       /* ---------기본 설정 -------------------------------------- */
       #sideMenu, #top_title, .patrollink, #firstHeading, #home_logo, #sideMenu { 
@@ -101,6 +103,15 @@
         margin: 25px;
         width:75%;}
 
+      .main-page h1{
+        color: #232700;
+        border-bottom:solid #232700 1.5px;
+      }
+
+      .main-page h2, h3{
+        color: #232700;
+      }
+
       .mainCategory{
         display: flex;
         flex-direction:column;
@@ -128,7 +139,52 @@
         background-color: #C0BB87;
         border-radius:5px;
         margin: 25px;
+        display:flex;
+        flex-direction:column;
       }
+
+      .sidenav a{
+        position:relative;
+        font-family: 'Work Sans', sans-serif;
+        font-size:15pt;
+        font-weight:600;
+        color:#232700;
+        text-decoration:none;
+        padding:15px;
+        margin:10px;
+        transition: all 0.3s ease 0s;
+      }
+
+      .sidenav a:hover{
+        text-decoration:none;
+        padding:15px;
+        margin:10px;
+        background-color:rgba( 255, 255, 255, 0.5 );
+        border-radius:5px;
+        border-bottom: solid 1px #232700;
+        transition: all 0.3s ease 0s;
+      }
+
+      {% comment %} .sidenav a a:before, .sidenav a:after {
+        content: '';
+        border-bottom: solid 1px white;
+        bottom: 0;
+        width: 0;
+      }
+
+      .sidenav a:before { left: 0; }
+      .sidenav a a:after { right: 0; }
+
+      .sidenav a:hover:before, .sidenav a:hover:after {
+        width: 50%;
+      }
+
+      .sidenav a:before, .sidenav a:after {
+        -webkit-transition: all 0.2s ease;
+                transition: all 0.2s ease;
+      } {% endcomment %}
+
+
     </style>
   </head>
   <body>

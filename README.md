@@ -6,6 +6,8 @@
 > - 그러니 sample 폴더에 index.html 이랑 style.css 정도만 일단 만들어둘게. 이미지 파일 필요한건 img 폴더에 일괄 정리해두자. 나중에 static 폴더로 옮기기 편하게
 > - 구글 문서 링크: https://docs.google.com/document/d/1hGRV2eOud-SDcDHhsRcfW7hw5SqUet7GpFJCk-gmXRs/edit?ts=5f170b43
 > - 페이지 수정 링크 https://2020.igem.org/Team:Korea-SIS 
+> - CSS 파일 수정 링크: https://2020.igem.org/Template:Korea-SIS/CSS  (CSS 파일 내용 그대로 업로드!)
+> - JS 파일 수정 링크: https://2020.igem.org/Template:Korea-SIS/JS
 
 ## 1. 개요
 

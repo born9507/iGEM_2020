@@ -157,3 +157,11 @@ img.logo{
   border-bottom: solid 1px #232700;
   transition: all 0.3s ease 0s;
 }
+
+.teamphoto {
+  width: 200px;
+}
+
+#teamPhoto img{
+  transition: all 0.3s ease 0s;
+}

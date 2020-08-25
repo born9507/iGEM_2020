@@ -75,6 +75,7 @@ img.logo{
   text-decoration: none;
   border-radius: 5px;
   margin:5px;
+
 }
 
 .home-header a:hover{
@@ -88,17 +89,19 @@ img.logo{
 
 .page{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   position:relative;
-  top:140px;}
+  width: 100%;
+  top:110px;
+  margin: 0 auto;
+}
 
 .main-page{
   display:flex;
   position:relative;
-  left: 20%;
   flex-direction:column;
   margin: 25px;
-  width:75%;}
+}
 
 .main-page h1{
   color: #232700;
@@ -135,7 +138,7 @@ img.logo{
   height:80%;
   background-color: #C0BB87;
   border-radius:5px;
-  margin: 25px;
+  margin:25px;
   display:flex;
   flex-direction:column;
 }

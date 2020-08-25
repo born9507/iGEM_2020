@@ -39,17 +39,19 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #232700;
-  height: 140px;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  height: 100px;
   width:100%;
   position:fixed;
   z-index:10;
 }
 
 img.logo{
-  height: 140px;
+  height: 80%;
   position:relative;
-  left:5%;
+  left:50%;
+  
 }
 
 .home-header{
@@ -61,22 +63,24 @@ img.logo{
 }
 
 .home-header a{
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   position:relative;
-  padding: 10px 15px 10px 15px;
+  padding: 5px 10px 5px 10px;
   letter-spacing:1px;
   color: #C0BB87;
-  font-size: 20pt;
-  font-weight: 700;
+  /* #232700,C0BB87 */
+  font-size: 16pt;
+  font-weight: 500;
   transition: all 0.3s ease 0s;
   text-decoration: none;
   border-radius: 5px;
+  margin:5px;
 }
 
 .home-header a:hover{
-  font-family: 'Work Sans', sans-serif;
-  padding: 10px 15px 10px 15px;
-  color:  #232700;  
+  font-family:  'Noto Sans JP', sans-serif;
+  padding: 5px 10px 5px 10px;
+  color: white;  
   background-color: #C0BB87;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
   transform: translateY(-10px);

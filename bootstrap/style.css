@@ -88,3 +88,9 @@ body {
     margin-top: 7rem;
   }
 }
+
+.navbar-brand{
+  font-weight: 600;
+  position: relative;
+  left: -200px;
+}

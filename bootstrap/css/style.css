@@ -18,3 +18,9 @@ body {
 	border-radius: 10px;
 	height: 300;
 }
+
+.featurette-image{
+	margin-top:7rem;
+	margin-bottom: 2rem;
+	border-radius:10px;
+}

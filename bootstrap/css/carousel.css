@@ -47,7 +47,7 @@
 ------------------------- */
 
 .featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 3rem 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -57,10 +57,7 @@
   letter-spacing: -.05rem;
 }
 
-.featurette-image{
-  margin-top:8rem;
-  border-radius:10px;
-}
+
 
 
 /* RESPONSIVE CSS

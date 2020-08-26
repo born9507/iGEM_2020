@@ -1,0 +1,20 @@
+body {
+	padding-top: 5rem;
+	padding-bottom: 3rem;
+	color: #5a5a5a;
+}
+
+.starter-template {
+	padding: 3rem 1.5rem;
+	text-align: center;
+}
+.paddingTop{
+	padding-top: 3rem;
+	color: #5a5a5a;
+}
+
+.memberPhoto{
+	margin-bottom: 10px;
+	border-radius: 10px;
+	height: 300;
+}

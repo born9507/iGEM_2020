@@ -2,8 +2,9 @@ header .navbar{
     box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.3);
 }
 
-.navbar-brand.title{
+a.navbar-brand.title{
     font-weight: 600;
+    color: #2C4001;
 }
 
 
@@ -28,7 +29,7 @@ footer{
 }
 
 p{
-    text-indent: 1.5em;
+    text-indent: 1.25em;
 }
 
 .carousel-inner{
@@ -38,6 +39,39 @@ p{
 /* #BFBC88 */
 
 .btn-primary{
-    background-color: transparent;
+    background-color: #8C884F;
     border:none;
 }
+
+.surveytab{
+    text-align: right;
+}
+
+.survey{
+    padding:10px;
+    border-radius:10px;
+
+}
+
+.survey:hover{
+    text-decoration: none;
+}
+
+.carousel-caption > .learn{
+    text-align: right;
+}
+
+.carousel-caption h1{
+    margin-bottom: 2rem;
+}
+
+.para{
+    padding:0.75rem;
+    padding-left: 3rem;
+    border-left: 2px solid #BFBC88;
+}
+
+.btn{
+    text-indent: 0;
+}
+

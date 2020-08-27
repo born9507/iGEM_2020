@@ -3,10 +3,9 @@ header .navbar{
 }
 
 a.navbar-brand.title{
-    font-weight: 600;
+    font-weight: 700;
     color: #2C4001;
 }
-
 
 
 .col-sm-8 > h1{
@@ -62,16 +61,27 @@ p{
 }
 
 .carousel-caption h1{
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .para{
     padding:0.75rem;
     padding-left: 3rem;
     border-left: 2px solid #BFBC88;
+    font-weight: 300;
 }
 
 .btn{
     text-indent: 0;
 }
 
+.interview span {
+    color:#8C884F;
+    font-size:1.2rem;
+    font-weigth:400;
+}
+
+.main-text{
+    font-size:1.25rem;
+    padding:1rem;
+}

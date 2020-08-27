@@ -8,7 +8,6 @@ a.navbar-brand.title{
 }
 
 
-
 .col-sm-8 > h1{
     font-size: 40px;
     margin:10px;
@@ -73,5 +72,11 @@ p{
 
 .btn{
     text-indent: 0;
+}
+
+.interview span {
+    color:#8C884F;
+    font-size:1.2rem;
+    font-weigth:400;
 }
 

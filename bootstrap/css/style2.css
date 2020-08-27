@@ -9,16 +9,35 @@ header .navbar{
 
 
 .col-sm-8 > h1{
-    color: #5a5a5a;
-    font-size: 50px;
-    font-weight: 400;
-    margin:20px;
+    font-size: 40px;
+    margin:10px;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
 
 .col-sm-8 > h2{
-    margin:20px;
+    color: #5a5a5a;
+    font-size: 50px;
+    font-weight: 400;
+    margin:10px;
+    margin-bottom: 1em;
 }
 
 footer{
-    margin-top:100px;
+    margin-top:6em;
+}
+
+p{
+    text-indent: 1.5em;
+}
+
+.carousel-inner{
+    background-color: rgba(191, 188, 136, 0.7);
+}
+
+/* #BFBC88 */
+
+.btn-primary{
+    background-color: transparent;
+    border:none;
 }

@@ -8,6 +8,7 @@ Project_Labnotes.html
 Project_Protocol.html
 Project_Results.html
 Project_Parts.html
+Project_Proposed_Implementation.html
 Device_Software.html
 Device_Hardware.html
 HumanPractices_Introduction.html
@@ -16,7 +17,7 @@ HumanPractices_Campaign.html
 HumanPractices_Interviews.html
 HumanPractices_Survey Analysis.html
 HumanPractices_IntergratedHumanPractices.html
-Awards/Judging Form.html
+Awards.html
 Safety.html
 
 Home
@@ -31,6 +32,7 @@ Project
     Protocol
     Results
     Parts
+    Proposed Implementation
 Device
     Software
     Hardware
@@ -41,5 +43,5 @@ Human Practices
     Interviews
     Survey Analysis
     Intergrated Human Practices
-Awards/Judging Form
+Awards
 Safety

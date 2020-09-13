@@ -39,15 +39,16 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #232700;
-  height: 140px;
+  background-color: white;
+  height: 100px;
   width:100%;
   position:fixed;
   z-index:10;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.3);
 }
 
 img.logo{
-  height: 140px;
+  height: 120px;
   position:relative;
   left:5%;
 }
@@ -63,22 +64,24 @@ img.logo{
 .home-header a{
   font-family: 'Work Sans', sans-serif;
   position:relative;
-  padding: 10px 15px 10px 15px;
+  margin: 10px;
+  padding: 5px 10px 5px 10px;
   letter-spacing:1px;
-  color: #C0BB87;
+  color: #C9D787;
   font-size: 20pt;
   font-weight: 700;
   transition: all 0.3s ease 0s;
   text-decoration: none;
   border-radius: 5px;
+  line-height: ;
 }
 
 .home-header a:hover{
   font-family: 'Work Sans', sans-serif;
-  padding: 10px 15px 10px 15px;
-  color:  #232700;  
-  background-color: #C0BB87;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  padding: 5px 10px 5px 10px;
+  color: white;  
+  background-color:#C9D787;
+  /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1); */
   transform: translateY(-10px);
 }
 
@@ -129,7 +132,7 @@ img.logo{
   position: fixed;
   width:14%;
   height:80%;
-  background-color: #C0BB87;
+  background-color:#C9D787;
   border-radius:5px;
   margin: 25px;
   display:flex;

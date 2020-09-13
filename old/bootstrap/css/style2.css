@@ -1,10 +1,17 @@
+/* colors
+#7D8A2E
+#C9D787
+#FFCOA9
+#FF8598 */
+
 header .navbar{
     box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.3);
+    background-color:#C9D787;
 }
 
 a.navbar-brand.title{
     font-weight: 700;
-    color: #2C4001;
+    color:white;
 }
 
 a.navbar-brand.title:hover, a.navbar-brand.title:focus{

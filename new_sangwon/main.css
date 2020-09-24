@@ -91,7 +91,6 @@ main {
 }
 
 .members-box {
-    border: black 1px solid;
     width: 200px;
     height: 300px;
     margin: 50px;
@@ -100,6 +99,22 @@ main {
 .members-box > img {
     width: 100%;
 }
+
+.members-position {
+    display: flex;
+    justify-content: center;
+}
+.members-name {
+    display: flex;
+    background: #7D8A2E;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.members-name > span {
+    color: white;
+}
+    
 
 
 footer {

@@ -43,6 +43,7 @@ main {
 .paragraph {
     padding-left: 3rem;
     border-left: 5px solid #C9D787;
+    width: 100%;
 }
 
 .col-half {

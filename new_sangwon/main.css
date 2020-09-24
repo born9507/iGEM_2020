@@ -26,16 +26,17 @@ main {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 450px;
+    top: 500px;
     left: 200px;
     right: 200px;
+    bottom: 100px;
     z-index: 3;
 }
 
 .main-page-inner-with-nav {
     position: absolute;
-    top: 450px;
-    left: 300px;
+    top: 500px;
+    left: 350px;
     z-index: 3;
 }
 
@@ -120,6 +121,15 @@ main {
     
 .design-image {
     width: 80%;
+}
+
+.imgbox {
+    display: flex;
+}
+
+.imgbox > img {
+    margin: 10px;
+    width: 300px;
 }
 
 footer {

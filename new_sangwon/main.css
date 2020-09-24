@@ -16,7 +16,7 @@ main {
     position: relative;
     background-color: white;
     width: 100%;
-    height: 2000px;
+    height: 4000px;
     margin-top: -450px;
     z-index: 0;
 }
@@ -50,9 +50,45 @@ main {
     width: 45%;
 }
 
+.attributions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.attribution-box {
+    margin: 80px 100px 0px 100px;
+    display: flex;
+    border: black 1px solid;
+    height: 300px;
+}
+
+.attribution-box > img {
+    height: 100%;
+}
+
+.attribution-box > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.attribution-name {
+    display: flex;
+    justify-content: space-between;
+    background: #7E862E;
+    height: 71px;
+    width: 100%;
+}
+
+.attribution-name > p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
 footer {
     position: relative;
-    bottom: 0;
+    bottom: 0px;
     background-color: #C9D787;
     display: flex;
     z-index: 3;

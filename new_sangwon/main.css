@@ -1,7 +1,24 @@
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    transition: all .3s ease;
+}
+
 main {
     /* position: relative; */
-    top: 0;
-    left: 100;
+    /* left: 100; */
+    top:0;
+    min-height:100%;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 300px;
+    padding-bottom:100px;
+    position: relative;
+    font-weight:400;
+    font-size: 18px;
+
 }
 
 .background-image {
@@ -19,6 +36,7 @@ main {
     height: auto;
     margin-top: -450px;
     z-index: 0;
+    margin-bottom: 100px;
 }
 
 .main-page-inner {
@@ -44,11 +62,15 @@ main {
     padding-left: 3rem;
     border-left: 5px solid #C9D787;
     width: 100%;
+    margin: 50px;
 }
 
 .col-half {
     display: flex;
     justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
 }
 
 .half {
@@ -64,12 +86,15 @@ main {
 .attribution-box {
     margin: 80px 100px 0px 100px;
     display: flex;
-    border: black 1px solid;
     height: 300px;
+    border-radius: 20px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.33);
+
 }
 
 .attribution-box > img {
     height: 100%;
+    border-radius: 20px 0 0 20px;
 }
 
 .attribution-box > div {
@@ -81,6 +106,7 @@ main {
     display: flex;
     justify-content: space-between;
     background: #7E862E;
+    border-radius: 0 20px 0 0;
     height: 71px;
     width: 100%;
 }
@@ -103,21 +129,28 @@ main {
 
 .members-box > img {
     width: 100%;
+    border-radius: 20px 20px 0 0;
 }
 
 .members-position {
     display: flex;
     justify-content: center;
+    padding: 10;
+    font-weight: 600;
 }
 .members-name {
     display: flex;
     background: #7D8A2E;
     height: 50px;
+    position: relative;
+    top:-2px;
     justify-content: center;
     align-items: center;
+    border-radius: 0 0 20px 20px;
 }
 .members-name > span {
     color: white;
+    font-weight: 500;
 }
     
 .design-image {
@@ -134,10 +167,11 @@ main {
 }
 
 footer {
-    position: relative;
     /* bottom: 0px; */
-    margin-top: 100px;
     background-color: #C9D787;
     display: flex;
-    z-index: 3;
+    z-index: 100;
+    height: 100px;
+    width: 100%;
+    bottom:0;
 }

@@ -1,0 +1,18 @@
+nav {
+    position: fixed;
+    background: #C9D787;
+    left: 0;
+    width: 285px;
+    height: 1000px;
+    z-index: 1;
+}
+
+.nav-menus {
+    position: relative;
+    top: 350px;
+    left: 50px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+}

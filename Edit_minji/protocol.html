@@ -35,18 +35,10 @@
               <div class="sub-menu-content">
                 <div><a href="description.html">Description & Inspiration</a></div>
                 <div><a href="design.html">Design</a></div>
-                <div><a href="labnotes.html">Labnotes</a></div>
                 <div><a href="protocol.html">Protocol</a></div>
-                <div><a href="results.html">Results</a></div>
-                <div><a href="parts.html">Parts</a></div>
+                <div><a href="modeling.html">Project Modeling</a></div>
                 <div><a href="proposed.html">Proposed Implementation</a></div>
-              </div>
-            </div>
-            <div class="sub-menu">
-              <a>Device</a>
-              <div class="sub-menu-content">
-                <div><a href="software.html">Software</a></div>
-                <div><a href="hardware.html">Hardware</a></div>
+                <div><a href="labnotes.html">Labnotes</a></div>
               </div>
             </div>
             <div class="sub-menu">
@@ -66,9 +58,6 @@
             <div class="sub-menu">
               <a href="safety.html">Safety</a>
             </div>  
-            <!-- <div class="sub-menu">
-              <a href="contribution.html">Contribution</a>
-            </div> -->
           </div>
         </div>
       </div>
@@ -86,39 +75,219 @@
       <div class="main-page">
         <div class="main-page-inner">
           <div class="paragraph">
-            <h1>E.coli transformation</h1>
-            <p>1. Take competent cells out of -80°C and thaw on ice (approximately 20-30 mins).</p>
-            <p>2. Incubate LB agar plates in 37°C incubator.</p>
-            <p>3. Mix 1 – 5 μl of DNA (to 50ng) into 20-50 μL of competent cells in a microcentrifuge or falcon tube. GENTLY mix by flicking the bottom of the tube with your finger a few times.</p>
-            <p>4. Incubate the competent cell/DNA mixture on ice for 20-30 mins.</p>
-            <p>5. Heat shock each transformation tube by placing the bottom 1/2 to 2/3 of the tube into a 42°C water bath for 30-60 secs (45 secs is usually ideal, but this varies depending on the competent cells you are using).</p>
-            <p>6. Put the tubes back on ice for 2 min.</p>
-            <p>7. Add 250-1,000 μl LB or SOC media (without antibiotic) to the bacteria and grow in a 37°C shaking incubator for 45 min.</p>
-            <p>8. Plate some or all of the transformation onto a 10 cm LB agar plate containing the appropriate antibiotic.</p>
-            <p>9. Incubate plates at 37°C overnight.</p>
-            <p>10. Grow cells in the LB media. (liquid)</p>
+            <h2>E.coli transformation</h2>
+            <ol>
+              <li>Take competent cells out of -80°C and thaw on ice (approximately 20-30 mins).</li>
+              <li>Incubate LB agar plates in 37°C incubator.</li>
+              <li>Mix 1 – 5 μl of DNA (to 50ng) into 20-50 μL of competent cells in a microcentrifuge or falcon tube. GENTLY mix by flicking the bottom of the tube with your finger a few times.</li>
+              <li>Incubate the competent cell/DNA mixture on ice for 20-30 mins.</li>
+              <li>eat shock each transformation tube by placing the bottom 1/2 to 2/3 of the tube into a 42°C water bath for 30-60 secs (45 secs is usually ideal, but this varies depending on the competent cells you are using).</li>
+              <li>Put the tubes back on ice for 2 min.</li>
+              <li>Add 250-1,000 μl LB or SOC media (without antibiotic) to the bacteria and grow in a 37°C shaking incubator for 45 min.</li>
+              <li>Plate some or all of the transformation onto a 10 cm LB agar plate containing the appropriate antibiotic.</li>
+              <li>Incubate plates at 37°C overnight.</li>
+              <li>Grow cells in the LB media. (liquid)</li>
+              <li>Protein extraction </li>
+            </ol>
           </div>
           <div class="paragraph">
-            <h1>Protein extraction</h1>
-            <p>B-PER solutions:  Bacterial Protein Extraction Reagents gently lyse E. coli</p>
-            <p>1. Centrifuge the media at 13000rpm, 4C for 5 min. </p>
-            <p>2. Discard the supernatant, and wash with PBS. </p>
-            <p>3. Centrifuge  in 13000rpm, 4C for 1 min and discard the supernatant. </p>
-            <p>4. Put the lysis buffer(B-PER) to the pellet, and mix them with pipetting.</p>
-            <p>5. (Extra: sonication on ice for 5-10sec.)</p>
-            <p>6. After incubation(1hr, room temperature), centrifuge in 13000rpm, 4C for 1 min.</p>
-            <p>7. Transfer the supernants to new e-tubes that are labeled.</p>
+            <h2>B-PER solutions:  Bacterial Protein Extraction Reagents gently lyse E. coli</h2>
+            <ol>
+              <li>Centrifuge the media at 13000rpm, 4C for 5 min. </li>
+              <li>Discard the supernatant, and wash with PBS. </li>
+              <li>Centrifuge  in 13000rpm, 4C for 1 min and discard the supernatant. </li>
+              <li>Put the lysis buffer(B-PER) to the pellet, and mix them with pipetting.</li>
+              <li>(Extra: sonication on ice for 5-10sec.)</li>
+              <li>After incubation(1hr, room temperature), centrifuge in 13000rpm, 4C for 1 min.</li>
+              <li>Transfer the supernants to new e-tubes that are labeled.</li>
+            </ol>
           </div>
+          <div class="paragraph">
+            <h1>Purification</h1>
+            <p>
+              <strong>Note</strong> Do not use strong reducing agents such as DTT with Ni-NTA Agarose columns.
+            </p>
+            <p>
+              DTT reduces the nickel ions in the resin. In addition, do not use strong chelating agents such as EDTA or EGTA in the loading buffers or wash buffers, as these will strip the nickel from the columns. Be sure to check the pH of your buffers before starting.
+            </p>
+            <h2>1) Preparing Ni-NTA Column</h2>
+            <p>
+              When preparing a column as described below, make sure that the snap-off cap at the bottom of the column remains intact.
+            </p>
+            <ol>
+              <li>Resuspend the Ni-NTA Agarose in its bottle by inverting and gently tapping the bottle repeatedly.</li>
+              <li>Pipet or pour 1.5 mL of the resin into a 10-mL Purification Column. Allow the resin to settle completely by gravity (5–10 minutes) or gently pellet it by low-speed centrifugation (1 minute at 800 × g). Gently aspirate the supernatant.</li>
+              <li>Add 6 mL sterile, distilled water and resuspend the resin by alternately inverting and gently tapping the column.</li>
+              <li>Allow the resin to settle using gravity or centrifugation as described in Step 2, and gently aspirate the supernatant.</li>
+              <li>For purification under Native Conditions, add 6 mL Native Binding Buffer </li>
+              <p>• Native Binding Buffer</p>
+              <p>
+                -Without Imidazole
+              </p>
+              <p>
+                Use 30 mL of the 1X Native Purification Buffer for use as the Native Binding Buffer (used for column preparation, cell lysis, and binding).
+              </p>
+              <p>
+                -With Imidazole
+              </p>
+              <p>
+                To prepare 30 mL Native Binding Buffer with 10 mM imidazole, combine:
+              </p>
+              <p>
+                • 30 mL of 1X Native Purification Buffer
+              </p>
+              <p>
+                • 100 μL of 3 M Imidazole, pH 6.0
+              </p>
+              <p>
+                Mix well and adjust pH to 8.0 with NaOH or HCl.
+              </p>
+              <li>Resuspend the resin by alternately inverting and gently tapping the column.</li>
+              <li>Allow the resin to settle using gravity or centrifugation as described in Step 2, and gently aspirate the supernatant.</li>
+              <li>Repeat Steps 5 through 7.</li>
+            </ol>
+
+
+            <h2>2) Storing Prepared Columns</h2>
+            <p>
+              To store a column containing resin, add 0.02% azide or 20% ethanol as a preservative and cap or parafilm the column. Store at room temperature.
+            </p>
+            <h2>3) Purification Under Native Conditions</h2>
+            <ol>
+              <li>Add 8 mL lysate prepared under native conditions to a prepared Purification Column.</li>
+              <li>Bind for 30–60 minutes using gentle agitation to keep the resin suspended in the lysate solution.</li>
+              <li>Settle the resin by gravity or low-speed centrifugation (800 × g), and carefully aspirate the supernatant. Save supernatant at 4°C for SDS-PAGE analysis.</li>
+              <li>Wash with 8 mL Native Wash Buffer. Settle the resin by gravity or low-speed centrifugation (800 × g), and carefully aspirate the supernatant. Save supernatant at 4°C for SDS-PAGE analysis.</li>
+              <p>*Native Wash Buffer </p>
+              <p>To prepare 50 mL Native Wash Buffer with 20 mM imidazole, combine:</p>
+              <p>• 50 mL of 1X Native Purification Buffer</p>
+              <p>• 335 μL of 3 M Imidazole, pH 6.0</p>
+              <p>Mix well and adjust pH to 8.0 with NaOH or HCl.</p>
+              <li>Repeat Step 4 three more times.</li>
+              <li>Clamp the column in a vertical position and snap off the cap on the lower end. Elute the protein with 8–12 mL Native Elution Buffer Collect 1 mL fractions and analyze with SDS-PAGE.</li>
+            </ol>
+            <p>■Native Elution Buffer</p>
+            <p>To prepare 15 mL Native Elution Buffer with 250 mM imidazole, combine:</p>
+            <p>• 13.75 mL of 1X Native Purification Buffer</p>
+            <p>• 1.25 mL of 3 M Imidazole, pH 6.0</p>
+            <p>Mix well and adjust pH to 8.0 with NaOH or HCl.</p>
+            <p>Note: Store the eluted fractions at 4°C. If –20°C storage is required, add glycerol to the fractions. For long term storage, add protease inhibitors to the fractions.
+            </p>
+            <p>
+              If you wish to reuse the resin to purify the same recombinant protein, wash the resin with 0.5 M NaOH for 30 minutes and equilibrate the resin in a suitable binding buffer. 
+            </p>
+            <p>
+              If you need to recharge the resin:
+            </p>
+            <p>
+              Ni-NTA resin can be used for up to three or four purifications of the same protein without recharging. Wash the resin with 0.5 M NaOH for 30 minutes and equilibrate the resin with the appropriate binding buffer, if you are reusing the resin.
+            </p>
+            <p>
+              We recommend not recharging the resin more than three times and only reusing it for purification of the same recombinant protein. If the resin turns white due to the loss of nickel ions from the column, recharge the resin.
+            </p>
+            <p>
+              To recharge 2 mL of resin in a purification column:
+            </p>
+            <ol>
+              <li>
+                Wash the column two times with 8 mL 50 mM EDTA to strip away the chelated nickel ions.
+              </li>  
+              <li>
+                Wash the column two times with 8 mL 0.5 M NaOH.
+              </li>
+              <li>
+                Wash the column two times with 8 mL sterile, distilled water.
+              </li>
+              <li>
+                Recharge the column with two washes of 8 mL NiCl2 hexahydrate at a concentration of 5 mg/mL prepared in sterile, distilled water.
+              </li>
+              <li>
+                Wash the column two times with 8 mL distilled water.
+              </li>
+              <li>
+                Add 0.02% azide or 20% ethanol as a preservative and cap or apply a parafilm to the column. Store at room temperature.
+              </li>
+            </ol>
+          </div>
+          <div class="paragraph">
+            <p><< Get Engineering success</p>
+            <p>
+              To deal with unexpected results, we’ll get samples of each step in procedure.
+            </p>
+            <p>
+              Then we can explain when we’ve made some mistakes in experiments.
+            </p>
+
+            <p>I) Poor resolution, purity</p>
+            <ul>
+              <li>Column poorly packed</li>
+              <li>Elution conditions not optimal: gradient, flow rate control</li>
+              <li>Protein precipitated in column: cleaning procedures are needed.</li>
+              <ul>
+                <li>Ex. HIC(Reduce salt concentration in buffer), IEX(Modify buffer, pH, salt conditions during run to maintain stability)</li>
+              </ul>
+            </ul>
+            <p>Ii) Influence of gene and/or protein sequence on expression and solubility</p>
+            <ul>
+              <p>One of the most common reasons that heterologous proteins fail to express is the presence of “rare” codons in the target mRNA. This codon bias can be overcome by codon-optimized gene synthesis. One advantage of gene synthesis is the ability to change the codon bias of the gene to be more compatible with the recombinant host. For E. coli, expression strains supplemented with the rare tRNAs can overcome the codon bias of the recombinant gene.</p>
+              <p>The probability of successful soluble protein expression decreases with increasing molecular weight, especially for proteins that are > 60 kD. When using E.Coli as an expression host, it is advantageous to design constructs of individual protein domains, as opposed to full length protein and to use solubility-enhancing fusion tags as these tags will intensely aid in protein purification and seldom will adversely affect biological or biochemical activity.</p>
+              <p>The starting and ending residues of the target domain can also affect expression yield and solubility. The optimal boundaries for the protein domain construct should be determined using the available functional and structural data of the protein. For a protein of unknown domain structure, threading the target protein sequence onto a homologous protein structure can help in determining the optimal domain boundaries. When a homologous protein structure is not available, the prediction of secondary structural elements should be exploited.</p>
+            </ul>
+            <p>Iii) Influence of vector on expression and solubility</p>
+            <ul>
+              <p>DNA sequence elements that direct the transcription and translation of the target gene include promoters, regulatory sequences, the Shine-Dalgarno box, transcriptional terminators, and origins of replication etc. In addition, expression vectors contain a selection element to aid in plasmid selection within the host cell. Another critical feature of the E. coli expression vector is the presence of a fusion tag.</p>
+              <p>When selecting a promoter system, the nature of the protein target and its desired downstream use must be considered. If the protein target is a toxic protein, consider using promoter systems that have extremely low basal expression. Alternatively, for maximal protein yields, a strong promoter should be selected. For aggregation-prone proteins, a cold-shock promoter, in which expression is carried out at low temperatures, may be tested.</p>
+              <p>Larger bacterial and heterologous proteins fold more slowly and tend to aggregate. To prevent aggregation and facilitate folding in E. coli, protein chaperones and folding catalysts can be used. The target protein can be co-expressed with a second protein that is encoded on either the same plasmid or a separate plasmid.</p>
+              <p>Fusion tags are genetically fused to target proteins to increase protein solubility. It is often necessary to test multiple fusion tags to determine which tag results in the maximum yields of soluble proteins. The placement of the tag, either at N-terminus or C-terminus of target protein, is also important. N-terminal fusions are the most common and have the added benefit that they often enhance soluble protein expression more successfully than C-terminal fusions. </p>
+              <p>The presence of a fusion tag may interfere with the biological activity of the recombinantly expressed protein, and thus, it may be important to enzymatically remove the tag after the fusion protein has been purified. It is recommended to include a cleavage site for a sequence-specific protease to enable removal of the tag.</p>
+            </ul>
+            <p>IV) Influence of host strains on expression of heterologous proteins</p>
+            <ul>
+              <p>Bacterial host strains have been developed to support the expression of heterologous proteins. Commercially available E. coli strains are specifically designed for the specific expression of proteins that are susceptible to proteolysis, contain rare codons, or require disulfide-bonds.</p>
+              <p>For proteins that are susceptible to proteolytic degradation, use of protease deficient strains such as E. coli BL21 or its derivatives are recommended. </p>
+              <p>Differences in codon frequency between the target gene and the expression host can lead to translational stalling, premature translation termination, and amino acid mis-incorporation. This difference may be overcome by supplying the rare tRNAs during expression. Bacterial strains that contain plasmids that encode rare tRNAs should be used to promote the efficient expression of genes that contain high frequencies of rare codons.</p>
+              <p>For proteins that contain disulfide bonds, expression in thioredoxin reductase (trxB) and/or glutathione reductase (gor) host strains will aid the formation of cytosolic disulfide bonds and will enhance the solubility of folded, disulfide-containing proteins. An alternative strategy to express disulfide-containing proteins would be to target the expressed protein to the E. coli periplasm which is highly oxidative and thus promotes the formation of disulfide bonds.  </p>
+            </ul>
+            <p>V) Improving solubility of proteins by changing expression conditions</p>
+            <ul>
+              <p>The use of strong expression promoters and high inducer concentrations can result in high protein concentrations that would lead to protein aggregation before folding. Reducing the rates of transcription and/or translation will facilitate folding by allowing the newly synthesized protein to fold before it aggregates. Following are the common expression condition parameters that can be manipulated to enhance protein solubility.</p>
+              <p>Temperature: Lowering the expression temperature (15-25°C) will improve the solubility of recombinantly expressed proteins. At lower temperatures, cell processes slow down, and thus lead to reduced rates of transcription, translation, cell division, and reduced protein aggregation. Lowering the expression temperature also results in a reduction in the degradation of proteolytically sensitive proteins. </p>
+              <p>Concentration of the inducer:lowering the concentration of the induction agent, will reduce the transcription rate, thereby, improving the solubility and activity of recombinant proteins. </p>
+              <p>Choice of media: Batch culture is the most common method to cultivate cells for recombinant protein expression. All nutrients that are required for growth must be supplied from the beginning by inclusion in the growth medium.</p>
+            </ul>
+            <p>VI) Improving protein purification</p>
+            <ul>
+              <p>Solubilize and purify the protein in a well-buffered solution containing an ionic strength equivalent to 300–500 mM of a monovalent salt, such as NaCl.</p>
+              <p>Use immobilized metal affinity chromatography (IMAC) as the initial purification step.</p>
+              <p>If additional purification is required, use size-exclusion chromatography (gel filtration). If necessary, use ion exchange chromatography as a final ‘polishing’ step.</p>
+              <p>The affinity tag may be removed to minimize non-native sequences in the recombinant protein and to achieve further purification.</p>
+
+            </ul>
+            <h2></h2>
+            <h2></h2>
+
+          </div>
+          <div class="paragraph">
+            
+          </div>
+          <div class="paragraph">
+            
+          </div>
+          <div class="paragraph">
+            
+          </div>
+          
         </div>
       </div>
-      <footer>
-        <div>Logo</div>
-        <div>Logo</div>
-        <div>Logo</div>
-        <div>Logo</div>
-      </footer>
     </main>
-
+    
+    <footer>
+      <div><img width="80px" src="./imgs/logo_sis.png" /></div>
+      <div><img width="80px" src="./imgs/logo_snu.png" /></div>
+      <div><img width="80px" src="./imgs/logo_dream.png" /></div>
+      <div><img width="80px" src="./imgs/logo_mh.png" /></div>
+      <div><img width="80px" src="./imgs/logo_go.png" /></div>
+    </footer>
 
     <script type="text/javascript" src="header.js"></script>
     <script type="text/javascript" src="nav.js"></script>

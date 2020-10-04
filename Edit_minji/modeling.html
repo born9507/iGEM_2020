@@ -74,20 +74,39 @@
       <img class="background-image" src="./imgs/background.png"/>
       <div class="main-page">
         <div class="main-page-inner">
-
-
+          <h1>EQUATION REQUIRED IN LATEX FORM</h1>
+          <p>
+            We proposed a flexible nonparametric MARS model designed to capture possible inter-dependent effects of three environmental factors on fungal infection of stored rice. The proposed model is fitted to a real rice data set. By doing so, we reported empirical results on the joint response surface of moisture content, temperature, and storage length of time on fungal infection. Note that none of extant previous studies have reported, empirically and explicitly, joint response curves of moisture content, temperature, and storage length of time on fungal infection. 
+          </p>
+          <p>
+            Through the real application, we demonstrated the proposed MARS model is flexible enough to capture quite complicated joint effects of these variables on fungal infection along with all the possible interactions. The proposed model, in fact, enables one to make inferences (i) on set of relevant, non-zero terms of terms of main and/or interaction effects of three environmental factors on fungal infection risk along with the nature of the effects in terms of functional shapes, curvature, and surface, and (ii) on the joint and/or conditional optimal values of three environmental factors to minimize the hazard of fungal infection of stored rice.
+          </p>
+          <p>
+            Even though this study is the first empirical modeling study on joint effects of moisture content, temperature, and storage length of time on fungal infection, all the discussions of conditional response functions are contingent upon the data we used. In particular, the data set we used has only three to four levels in rather narrow ranges for each of three environmental variables – see Table 1. Therefore, a good direction for future study may be to fit the proposed MARS model to relatively rich data with increases in (i) the large number of observations, (ii) the number of explanatory environmental variables, (iii) the numbers of levels for each of explanatory variables, and/or the ranges of explanatory variables.
+          </p>
         </div>
       </div>
-      <footer>
+    </main>
+    
+    <footer>
       <div><img width="80px" src="./imgs/logo_sis.png" /></div>
       <div><img width="80px" src="./imgs/logo_snu.png" /></div>
       <div><img width="80px" src="./imgs/logo_dream.png" /></div>
       <div><img width="80px" src="./imgs/logo_mh.png" /></div>
       <div><img width="80px" src="./imgs/logo_go.png" /></div>
-      </footer>
-    </main>
+    </footer>
 
-
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+                  inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+      });
+    </script> 
     <script type="text/javascript" src="header.js"></script>
     <script type="text/javascript" src="nav.js"></script>
     <script type="text/javascript" src="main.js"></script>

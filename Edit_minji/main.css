@@ -175,3 +175,7 @@ footer {
     width: 100%;
     bottom:0;
 }
+
+.main-page-inner-with-nav h1, .main-page-inner h1{
+    color: #FF8598;
+}

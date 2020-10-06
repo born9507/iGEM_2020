@@ -94,10 +94,12 @@ footer {
     align-items: center;
     margin-left: 350px;
     margin-right: 200px;
-    width: 100%;
+    width: 70%;
     z-index: 3;
     top:100px;
 }
+
+
 
 .paragraph {
     padding-left: 3rem;
@@ -130,7 +132,6 @@ footer {
     height: 300px;
     border-radius: 20px;
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.33);
-
 }
 
 .attribution-box > img {

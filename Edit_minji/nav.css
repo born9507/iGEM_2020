@@ -2,14 +2,14 @@ nav {
     position: fixed;
     background: #C9D787;
     left: 0;
-    width: 285px;
-    height: 1000px;
+    width: 15%;
+    height: 100%;
     z-index: 1;
 }
 
 .nav-menus {
     position: relative;
-    top: 400px;
+    top: 55%;
     left: 20px;
     width: 50px;
     display: flex;

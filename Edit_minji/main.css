@@ -12,7 +12,7 @@ header {
     top:0;
     left:0;
     width: 100%;
-    height: 140px;
+    height: 15%;
     background-color: #7D8A2E;
     z-index: 3;
     font-family: 'Noto Sans JP', sans-serif;
@@ -39,6 +39,7 @@ footer {
     display: flex;
     justify-content: space-around;
     height: 100px;
+    margin-top: 15%;
 }
 
 .nav-main {
@@ -92,20 +93,25 @@ footer {
 .main-page-inner-with-nav {
     position: relative;
     align-items: center;
-    margin-left: 350px;
-    margin-right: 200px;
+    margin-left:23%;
+    margin-right:23%;
     width: 70%;
     z-index: 3;
     top:100px;
 }
 
-
-
 .paragraph {
     padding-left: 3rem;
     border-left: 5px solid #C9D787;
     width: 100%;
-    margin: 5% 0 20% 0;
+    margin: 10% 0 10% 0;
+}
+
+.home-paragraph {
+    padding-left: 3rem;
+    border-left: 5px solid #C9D787;
+    width: 100%;
+    margin: 5% 0 0 0;
 }
 
 .col-half {

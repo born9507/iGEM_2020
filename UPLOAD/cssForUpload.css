@@ -38,7 +38,7 @@ a{
     display: flex;
     align-items: flex-end;
     font-weight: 700;
-    font-size:30;
+    font-size:32px;
     color: #C9D787;
 }
 
@@ -309,7 +309,7 @@ footer {
 .col-half {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 70px;
     margin-bottom: 50px;
     position: relative;
 }
@@ -358,34 +358,48 @@ footer {
 
 .members-row {
     display: flex;
+    align-items: center;
 
 }
 
 .members-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 200px;
     height: 300px;
     margin: 50px;
 }
 
 .members-box > img {
-    width: 100%;
+    width: 200px;
+    height: 268px;
     border-radius: 20px 20px 0 0;
 }
 
 .members-position {
-    display: flex;
-    justify-content: center;
-    padding: 10;
-    font-weight: 600;
+    padding:10px;
+    font-weight:500;
 }
+
+div.members-position.long{
+    padding:10px;
+    font-size: 20px;
+    font-weight:500;
+    width: 120%;
+}
+
+.mebers-video{
+    margin: 30px;
+}
+
 .members-name {
-    display: flex;
     background: #7D8A2E;
+    padding:10px;
     height: 50px;
+    width: 180px;
     position: relative;
     margin-top:-2px;
-    justify-content: center;
-    align-items: center;
     border-radius: 0 0 20px 20px;
 }
 .members-name > span {

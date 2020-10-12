@@ -38,7 +38,7 @@ a{
     display: flex;
     align-items: flex-end;
     font-weight: 700;
-    font-size:30;
+    font-size:32px;
     color: #C9D787;
 }
 
@@ -61,9 +61,10 @@ a{
 }
 
 .sub-menu a{
+    text-decoration: none;
     color: white;
     font-weight: 500;
-    font-size:22;
+    font-size:28px;
     padding: 5px 10px 5px 10px;
     border-radius: 5px 5px 0 0;
 }
@@ -91,9 +92,10 @@ a{
 }
 
 .sub-menu-content a{
+    text-decoration: none;
     color:black;
     font-weight: 300;
-    font-size: 18;
+    font-size: 22px;
 }
 
 .sub-menu-content a:hover{
@@ -103,7 +105,7 @@ a{
 }
 
 .sub-menu-content div{
-    padding:3px;
+    padding:5px;
     border-radius:0;
 }
 
@@ -139,18 +141,23 @@ html, body{
     min-height: 100%;
     margin: 0 auto;
     transition: all .3s ease;
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
     position: fixed;
-    /* right: 0; */
     top:0;
     left:0;
     width: 100%;
     height: 140px;
     background-color: #7D8A2E;
     z-index: 100;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Noto Sans JP', sans-serif; */
+    /* font-family: 'Poppins', sans-serif; */
+    font-size: 28px;
+    font-weight: 500;
     animation-name: slide-in-top, fade;
     animation-duration: 0.5s, 0.5s;
     animation-delay:0.5s,0.5s;
@@ -164,8 +171,10 @@ main {
     min-height:100%;
     width: 100%;
     position: relative;
-    font-weight:400;
-    font-size: 20px;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    font-size: 22px;
     animation-name:fade;
     animation-duration: 1s;
     animation-delay: 0.8s;
@@ -175,7 +184,7 @@ main {
 
 .circle1{
     position: absolute;
-    background-color:#FFC0A9 ;;
+    background-color:#FFC0A9;
     z-index: 5;
     border-radius:300px;
     width: 300px;
@@ -250,6 +259,7 @@ footer {
     text-indent:20px;
     text-align: justify;
     text-justify: auto;
+    line-height: 140%;
 }
 
 
@@ -277,7 +287,7 @@ footer {
 .main-page-inner-with-nav {
     position: relative;
     align-items: center;
-    margin-left:23%;
+    margin-left:22%;
     margin-right:23%;
     width: 70%;
     z-index: 3;
@@ -301,7 +311,7 @@ footer {
 .col-half {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 70px;
     margin-bottom: 50px;
     position: relative;
 }
@@ -350,34 +360,48 @@ footer {
 
 .members-row {
     display: flex;
+    align-items: center;
 
 }
 
 .members-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 200px;
     height: 300px;
     margin: 50px;
 }
 
 .members-box > img {
-    width: 100%;
+    width: 200px;
+    height: 268px;
     border-radius: 20px 20px 0 0;
 }
 
 .members-position {
-    display: flex;
-    justify-content: center;
-    padding: 10;
-    font-weight: 600;
+    padding:10px;
+    font-weight:500;
 }
+
+div.members-position.long{
+    padding:10px;
+    font-size: 20px;
+    font-weight:500;
+    width: 120%;
+}
+
+.mebers-video{
+    margin: 30px;
+}
+
 .members-name {
-    display: flex;
     background: #7D8A2E;
+    padding:10px;
     height: 50px;
+    width: 180px;
     position: relative;
     margin-top:-2px;
-    justify-content: center;
-    align-items: center;
     border-radius: 0 0 20px 20px;
 }
 .members-name > span {
@@ -404,7 +428,15 @@ footer {
 
 .main-page-inner-with-nav h1{
     color: #FF8598;
+    padding-top: 3%;
+    margin-bottom: 0;
 }
+
+.main-page-inner-with-nav h2{
+    color:#FFC0A9;
+    padding-top: 3%;
+}
+
 
 nav {
     position: fixed;
@@ -423,7 +455,7 @@ nav {
     position: relative;
     top: 30%;
     left: 20px;
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     z-index: 3;

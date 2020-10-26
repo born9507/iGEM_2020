@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="test.css">
+  </head>
+  <body>
+    <header>
+      <div>header</div>
+    </header>
+    <nav>
+      <div>nav</div>
+    </nav>
+    <main>
+      <div class="wrapper-with-nav">
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+        <h1>main</h1>
+      </div>
+    </main>
+    
+    <footer>
+      <div>footer</div>
+    </footer>
+  </body>
+</html>
+  </body>
+
+</html>
+
+
+<div id="user_item" class="has_submenu">
+  <style>
+  #nlogin_iframe {
+        display: block;
+        position:relative;
+        width: 900px;
+        height: 160px;
+        border: none;
+        font-family:  ariel, sans-serif;
+        text-align:   center;
+        color:        white;
+        background-color: transparent;
+        margin-top:  10px;
+  }
+  </style>
+  <script>
+  function open_login_iframe() {
+      jQuery('#user_item .submenu').remove();
+      jQuery('#user_item').append("<DIV class='submenu' style='display:block'></DIV>");
+      jQuery('#user_item .submenu').append("<DIV id='nlogin_div'>Login to the iGEM Web Sites<a onClick='close_login_iframe()' class='close' style='color:white;float:right;' >Close</a></div>");
+      jQuery('#user_item .submenu').append("<iframe id='nlogin_iframe' src='https://igem.org/Login2' frameborder=0></iframe>");
+      jQuery('#user_item .submenu').append("<DIV class='link_text'><a style='color:rgb(140,190,255)'href='http://igem.org/Account_Apply'>Apply for a new account</a></div>");
+      jQuery('#user_item .submenu').append("<DIV style='padding-top:10px;color:#ddd;font-family:arial;font-weight:100;font-size:14px;'>You must have cookies enabled to log in to iGEM.</div>");
+      return;
+  }
+  function close_login_iframe(){
+     jQuery('#user_item .submenu').empty();
+     jQuery('#user_item .submenu').append("<DIV style='padding:10px 200px'>Reloading page...</DIV>");
+     location.reload();
+  }
+  function open_logout_iframe() {
+      jQuery('#user_item').unbind('mouseenter mouseleave');
+      jQuery('#user_item .submenu').empty();
+      jQuery('#user_item .submenu').append("<DIV id='login_div' >Logout from the iGEM Web Sites<a onClick='close_logout_iframe()' class='close' style='color:white;float:right;'>Close</a></div>");
+      jQuery('#user_item .submenu').append("<iframe id='nlogin_iframe' src='https://igem.org/Logout' frameborder=0></iframe>");
+      return;
+  }
+  function close_logout_iframe(){
+     jQuery('#user_item .submenu').empty();
+     jQuery('#user_item .submenu').append("<DIV style='padding:10px 200px'>Reloading page...</DIV>");
+     location.reload();
+  }
+  </script><style>
+  .link_text{
+     position: relative;  
+     top: -20px;
+     color:   rgb(140,190,255);
+     font-style:  italic;
+     font-family: arial;
+     font-weight: 200;
+     font-size:   15px;
+     padding:     0px 20px 20px 38px;
+     
+     cursor:      pointer;
+     text-decoration: none;
+     border: none;
+     background-color: transparent;
+  }
+  .link_text a:visited {
+     color: rgb(140,190, 255) !important;
+     text-decoration: none    !important;
+  }
+  .link_text a:hover {
+     color: rgb(200,255, 255) !important;
+     text-decoration: none    !important;
+  }
+  </style>login<script>
+  jQuery('#user_item').unbind('mouseenter mouseleave');
+  jQuery('#user_item').one('click',function(){open_login_iframe();});
+  </script><div class="submenu" style="display:block"><div id="nlogin_div">Login to the iGEM Web Sites<a onclick="close_login_iframe()" class="close" style="color:white;float:right;">Close</a></div><iframe id="nlogin_iframe" src="https://igem.org/Login2" frameborder="0"></iframe><div class="link_text"><a style="color:rgb(140,190,255)" href="http://igem.org/Account_Apply">Apply for a new account</a></div><div style="padding-top:10px;color:#ddd;font-family:arial;font-weight:100;font-size:14px;">You must have cookies enabled to log in to iGEM.</div></div></div>

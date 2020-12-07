@@ -4,46 +4,33 @@
 >
 > - Google Docs 에 정리되어 있는 내용을 바탕으로 웹페이지 제작
 >
-> - 페이지 수정 링크 https://2020.igem.org/Team:Korea-SIS 
-> - CSS 파일 수정 링크: https://2020.igem.org/Template:Korea-SIS/CSS
-> - JS 파일 수정 링크: https://2020.igem.org/Template:Korea-SIS/JS
+> - 페이지 링크 https://2020.igem.org/Team:Korea-SIS 
+> - CSS 링크: https://2020.igem.org/Template:Korea-SIS/CSS
+> - JS 링크: https://2020.igem.org/Template:Korea-SIS/JS
+
+
 
 ## 1. 개요
 
 iGEM 2020 대회 **연구 실적 정리** 위키 페이지 제작 외주
 
-#### 사이트 URL 구조도
-
-```http
-https://2020.igem.org/Team:KOREA_SIS
-https://2020.igem.org/Team:KOREA_SIS/Team
-https://2020.igem.org/Team:KOREA_SIS/Project
-https://2020.igem.org/Team:KOREA_SIS/Human_Practices
-https://2020.igem.org/Team:KOREA_SIS/Awards
-https://2020.igem.org/Team:KOREA_SIS/Safety
-```
-
 
 
 ## 2. 일정
 
-8/2 디자인 초안
-
 **8월초**
 
-html 내용 구조 추가
+- 디자인 초안(Adobe XD)
 
-CSS 들어가기 전에 XD로 대강 디자인 컨셉을 잡아서 보여주고 수정할거있음 같이 수정해봅시다!
+- html 내용 구조 추가
 
 **8월말**
 
-css 적용
+- css, 자바스크립트 적용
 
 **9월초**
 
-자바스크립트 모션 등
-
-**10월말**
+- 계속해서 페이지 내용 세부 수정(Google doc 변경사항에 맞춰서)
 
 
 
@@ -59,7 +46,7 @@ css 적용
 
 ## 4. 참고 사이트
 
-수상작 ( * 같은 디자인을 추구한다고 함 )
+수상작 ( * 같은 디자인을 추구 )
 
 https://2019.igem.org/Team:Mingdao  *
 
@@ -96,72 +83,65 @@ https://2019.igem.org/Team:TU_Kaiserslautern/Parts
 
 #### CSS, JS 파일 적용 방법 
 
-#### <방법 1> 이 방법을 쓰자!
+##### 2020.igem.org/Template:Korea-SIS/CSS
 
-html 소스 코드 내에 style 태그랑 script 태그 사용
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      h1 {
-        color: blue;
-      }
-    </style>
-  </head>
-  <body>
-    <input type="button" id="hw" value="Hello world" />
-    <script type="text/javascript">
-        var hw = document.getElementById('hw');
-        hw.addEventListener('click', function(){
-            alert('Hello world');
-        })
-    </script>
-  </body>
-</html>
-```
-
-
-
-#### <방법 2> 
-
-CSS 파일, JS 파일 따로 업로드 하는 방법
-
-##### 2020.igem.org/Template:TeamName/CSS
+- CSS 는 iGEM 자체 CSS 를 덮어씌워야 함(그냥 하면 원하는 레이아웃이 나오지 않는다)
 
 ```css
-<style>
-/*Make text red and bold*/
+/* ---------기본 설정 -------------------------------------- */
+#sideMenu, #top_title, .patrollink, #firstHeading, #home_logo, #sideMenu {
+    display:none; 
+}
+#content { 
+    padding:0px; 
+    width:100%; 
+    margin-top:-7px; 
+    margin-left:0px; 
+    border:none;
+}
+body, html {
+    background-color:white; 
+    width: 100%; 
+    height: 100%;
+}
+#bodyContent h1, #bodyContent h2, #bodyContent h3, #bodyContent h4, #bodyContent h5 { 
+    margin-bottom: 0px; 
+}
+#bodyContent a[href ^="https://"], .link-https { 
+    padding-right:0px;
+}
+```
+
+- 아래는 css 업로드 예제
+
+```css
 .red_text {
     color: #f42434;
     font-weight:bold;
 }
-</style>
 ```
 
-##### 2020.igem.org/Template:TeamName/JS
+##### 2020.igem.org/Template:Korea-SIS/JS
 
 ```js
-<script>
 $(document).ready(function() {
     $("#alert").addClass("red_text");
 });
-</script>
 ```
 
-##### 2020.igem.org/Team:TeamName/Project
+##### 2020.igem.org/Team:Korea-SIS/<doc_name>
 
 ```html
-{{TeamName/CSS}}
 <html>
-  <h2> Our Project </h2>
-  <p> Beginning of the page about our project.</p>
+    <head>
+	    <link rel="stylesheet" type="text/css" href="https://2020.igem.org/wiki/index.php?title=Template:Korea-SIS/CSS&action=raw&ctype=text/css" />    
+    </head>
+	<body>
+        
+		<script type="text/javascript" src="https://2020.igem.org/wiki/index.php?title=Template:Korea-SIS/JS&action=raw&ctype=text/javascript"></script>
+    </body>
 </html>
-{{TeamName/JS}}
 ```
-
-
 
 
 
@@ -179,52 +159,12 @@ $(document).ready(function() {
 
 #### 사진 html 에서 불러오기
 
-URL이 어떤식으로 지정되지..? 이거 업로드 해봐야 알겠다.
+- 업로드 후 사진 원본 url 복사해서 링크
 
 ```
-<img src="image URL "> 
+<img class="background-image" src="https://2020.igem.org/wiki/images/1/1f/T--Korea-SIS--background.png"/>
 ```
 
 ```
-<video width="100%" height="240" controls>
-<source src="https://2018.igem.org/wiki/images/f/fe/IGEM_Human_Practices.mp4" type="video/mp4">
-</video>
+<video autoplay muted controls width="800px" height="auto" src="https://2020.igem.org/wiki/images/c/ce/T--Korea-SIS--attribution_video.mp4"></video>
 ```
-
-
-
-### 그냥 참고
-
-
-
-- Home
-- Team
-  - Team
-  - Attributions
-  - Collaborations
-  - Inclusion
-- Project
-  - Contriubution
-  - Description
-  - Design
-  - Engineering
-  - Experiments
-  - Notebook
-  - Partnership
-  - Proof of Concept
-  - Results
-- Parts
-  - Part Collection
-  - Parts
-  - Improve
-- Safety
-- Human Practices
-- Awards
-  - Education
-  - Entrepreneurship
-  - Hardware
-  - Measurement
-  - Model
-  - Plant
-  - Software
-  - Sustainable

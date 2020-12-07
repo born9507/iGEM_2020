@@ -1,0 +1,730 @@
+The aim here is to model the possible inter-woven effects of the three
+environmental factors on fungal infection of stored rice. Suppose that a
+researcher has collected data of the environmental factors and fungal
+infections, $\{x_{n},y_{n}\}_{n=1}^{N}$, from $N$ samples of stored rice
+obtained across different storage places as well as over different time
+periods. Here, $x_{n}=(m_{n},t_{n},l_{n})^{^{\prime}}$ denotes moisture
+content ($m_{n}$), temperature ($t_{n}$), and storage length of time ($l_{n}$)
+of rice sample $n$ ($n=1,...,N$). In addition, $y_{n}$ indicates fungal
+infection mesure of the rice sample $x_{n}$. Then, our modeling take here is
+to capture a relationship between $x_{n}$ and $y_{n}$:%
+\begin{equation}
+y_{n}=f(x_{n})+\varepsilon_{n},\text{ }n=1,\ldots,N,\label{general_y}%
+\end{equation}
+where $f(\cdot)$ is an unknown regression function that we wish to estimate
+and $\varepsilon_{n}$ is an error term with mean 0. The regression function
+$f$ gives the predictive relationship of an $N$-dimensional response vector
+$y=(y_{1},\ldots,y_{N})^{^{\prime}}$ on an $N\times3$ design matrix
+$x=(x_{1}^{^{\prime}},\ldots,x_{N}^{^{\prime}})^{^{\prime}}$, i.e. the
+conditional expectation of $y$ given $x$, $E(y)=f(x)$. Then, if $f$ is
+estimated and available, it is straightforward to use the function $f$ to
+predict a value of $y_{N+1}$ given a new, environmental design variable
+$x_{N+1}\notin x.$
+
+In this study, the function $f$ is not fixed in a parametric form (e.g., a
+linear function with unknown parameters $(\alpha,\beta,\gamma)$,
+$f(x_{n})=\alpha m_{n}+\beta t_{n}+\gamma l_{n}$. Specifically, $f$ is
+presumed to be unknown completely so that $f$ itself is a unknown parameter to
+be estimated. In particular, the function is going to be estimated
+nonparametrically without any constraints on its functional shape. In the
+statistics literature, a large number of nonparametric regression models have
+been developed for the estimation of unknown function $f$ in a flexible,
+adaptive way (cf. Takezawa 2005). In this study, the function $f$ is estimated
+non-parametrically on the basis of multivariate adaptive regression spline
+(MARS) model (Denison et al. 1998; Friedman 1991, 1993).
+
+Suppose that the whole data domain $x$ is partitioned into $K$ distinct
+sub-domains: $x_{1}^{p},\ldots,x_{K}^{p}$. Then, $f$ can be represented by a
+partition regression model as follows:%
+\begin{equation}
+f=\sum_{k=1}^{K}\theta_{k}B_{k}(x),\label{partitioned}%
+\end{equation}
+
+
+where $\theta_{k}$ and $B_{k}(x)$ denote, respectively, regression coefficient
+and basis function associated with the $k$-th partition, $x_{k}^{p}$. In the
+MARS model, the partitions have two-level hierarchy structure along with
+interactions and knots -- detailed discussions follow.
+
+Let $\#(x)$ denote the total number of columns in $x$, i.e. the total number
+of explanatory variables -- for example, $3$ in our study. Let $d=R(x)$
+denotes the number of relevant explanatory variables in $x$; here, relevant
+explanatory variables denote those which have non-zero effects on $y$. The
+values of $d$, therefore, range from $0$ to $\#(x)$; the value $d=0$ indicates
+that all explanatory variables in $x$ show zero-effects on $y$, and $d>1$
+means that $d$ explanatory variables exhibit non-zero effects while others do
+not affect $y$. Note that the number of possible configurations of design
+matrix varies across different values of $d$: specifically, the number of
+$d$-combination of explanatory variables is $\binom{\#(x)}{d}$, that is the
+binomial coefficient. For example, in our study, there are three distinct
+subsets of $x$ for $d=1$: $m=(m_{1},\ldots,m_{N})^{^{\prime}}$, $t=(t_{1}%
+,\ldots,t_{N})^{^{\prime}}$, and $l=(l_{1},\ldots,l_{N})^{^{\prime}}$.
+
+Next, each of the first level partitions of $x$, $x_{1}^{p1},\ldots
+,x_{K1}^{p1}$, defined across different values of $d$, is further divided into
+several sub-partition along with the second level variable, knots. In the MARS
+model, the knot configurations -- the numbers and the locations of knots --
+are also unknown parameters to be estimated; specifically, knot configurations
+may differ across the first level partitions $x_{1}^{p1},\ldots,x_{K1}^{p1}$
+as well as across $R(x_{k}^{p1})$ explanatory variables in $x_{k}^{p1}$,
+$k=1,\ldots,K1$. Finally, the second-level partitions become the final $K$
+distinct partitions $x_{1}^{p},\ldots,x_{K}^{p}$. Then, the MARS model
+formulates the basis function as follows:%
+\[
+B_{k}(x)=\left\{
+\begin{array}
+[c]{c}%
+1,\text{ if }\#(x_{k}^{p})=0,\\%
+%TCIMACRO{\dprod \limits_{i=1}^{\#(x_{k}^{p})}}%
+%BeginExpansion
+{\displaystyle\prod\limits_{i=1}^{\#(x_{k}^{p})}}
+%EndExpansion
+\left[  s_{k,i}\times(x_{k,i}^{p}-\tau_{k,i})\right]  _{+},\text{ otherwise,}%
+\end{array}
+\right.
+\]
+where $a_{+}=\max(0,a)$ is a truncation operator, $x_{k,i}^{p}$ denotes the
+$i$-th element ($i=1,\ldots,\#(x_{k}^{p})$) of $x_{k}^{p}$, $s_{k,i}%
+\in\{1,-1\}$ is the sign for $x_{k,i}^{p}$, and $\tau_{k,i}$ is a split, knot
+point for $x_{k,i}^{p}$. Note that the knot configurations $\{\tau_{k,i}\}$
+may vary across different partitions as well as across different explanatory
+variables in a given partition.
+
+It is clear that $B_{k}(x)$ captures only an intercept term if $\#(x_{k}%
+^{p})=0$. If the value of $\#(x_{k}^{p})$ is one, then only one element of
+$x_{k}^{p}$ has a non-zero main effect. In particular, when the value of
+$\#(x_{k}^{p})$ is greater than one, $\#(x_{k}^{p})$ elements of $x_{k}^{p}$
+exhibit a $\#(x_{k}^{p})$-way interaction effect. Therefore, it is easy to
+realize that the first level partition $\{x_{k}^{p1}\}$, corresponds to
+interaction effects. Given a particular partition at the first level, the
+partition $\{x_{k}^{p1}\}$ can be further divided into sub-partitions across
+different knot configurations $\{\tau_{k,i}\}$: note that $\tau_{k,i}$ is a
+unknown parameters to be estimated. Therefore, it is easy to see that the MARS
+have a two-level partition structure. Finally, in the MARS model, all the
+unknown parameters to be estimated are $\{\{\theta_{k}\},\{s_{k,i}%
+\}_{i},\{t_{k,i}\}_{i}\}_{k}$.\
+
+\section{Empirical Applications}
+
+The proposed MARS model is is fitted to a real data set in order to examine
+possible joint effects of three environmental factors on fungal infection of
+stored rice.
+
+\subsection{Data}
+
+The effects of moisture content, temperature, and storage periods on fungal
+infection are empirically examined in a nonparametric way by fitting the MARS
+model to laboratory data of paddy rice reported in Abdel-Hafez et al (1992)'s paper.
+
+Their published data contain, in total, $N=48$ observations of environmental
+factors and fungal infection scores across various levels of three
+environmental factors -- see Table \ref{TAB_Data}. In addition, fungal
+infection scores, measured as the count of propaglues of fungi per 1 mg dry
+grain, are attained by using the popular dilution-plate method (cf.
+Christensen 1963).
+%TCIMACRO{\TeXButton{B}{\begin{table}[tbp] \centering}}%
+%BeginExpansion
+\begin{table}[tbp] \centering
+%EndExpansion%
+\begin{tabular}
+[c]{cc}\hline
+Environmental Factors & Levels\\\hline
+\multicolumn{1}{l}{Moisture content} &
+\multicolumn{1}{l}{$11.5\%,17\%,22.5\%,28\%$}\\
+\multicolumn{1}{l}{Storage temperature} & \multicolumn{1}{l}{$8%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$,18%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$,28%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C}\\
+\multicolumn{1}{l}{Storage length of time} & \multicolumn{1}{l}{$1,2,4,8$
+months}\\\hline
+\end{tabular}
+\caption{Levels of Environmental Factors in the Data}\label{TAB_Data}%
+%TCIMACRO{\TeXButton{E}{\end{table}}}%
+%BeginExpansion
+\end{table}%
+%EndExpansion
+
+
+\subsection{Model Comparison}
+
+The MARS model is fitted to the Abdel-Hafez \textit{et al} (1992)'s data by
+using the earth package for R posted at the CRAN repositories,
+https://mirror.rcg.sfu.ca/mirror/CRAN/. R, available at
+https://www.r-project.org/, is a free software for statistical computing. The
+statistical software R has come into prominence due to its flexibility as an
+efficient language that builds a bridge between software development and data
+analysis. Through the use of the earth package, we may avoid unnecessary
+tedious, technical difficulties involved in the estimation task of the MARS
+model, and focus on inferences on research questions.
+
+Because we have three environmental variables, the possible orders of
+interactions range from $0$ to $3$. Table \ref{TAB_ModelComp} gives model
+performance results across different configurations of interaction effects.
+Residual sum-of-squares (RSS) denotes the summed values of squared errors in
+total in the data, where error is the absolute value of difference between
+observed and predicted fungal infection scores given values of three
+environmental factors. R-square measure, defined as 1 -- RSS/TSS, is designed
+to measure how well the model fits the training data, where TSS denotes total
+sum-of-squares of fungal infection scores, the summed values of squared
+deviations of fungal infection scores from the sample average. Therefore,
+model becomes more favorable in terms of model fit as RSS decreases and
+R-square increases.
+%TCIMACRO{\TeXButton{B}{\begin{table}[tbp] \centering}}%
+%BeginExpansion
+\begin{table}[tbp] \centering
+%EndExpansion%
+\begin{tabular}
+[c]{c|c|c}\hline
+Model & Residual sum-of-squares & R-square\\\hline
+\multicolumn{1}{l|}{$M_{1}${\small \ }(main effects only)} & $14245656$ &
+$0.421$\\
+\multicolumn{1}{l|}{$M_{2}${\small \ }(up to 2-way interactions)} & $5631265$
+& $0.771$\\
+\multicolumn{1}{l|}{$M_{3}${\small \ }(up to 3-way interactions)} & $4047269$
+& $0.835$\\\hline
+\end{tabular}
+\caption{Model Performance in the Data}\label{TAB_ModelComp}%
+%TCIMACRO{\TeXButton{E}{\end{table}}}%
+%BeginExpansion
+\end{table}%
+%EndExpansion
+
+
+Among three competing MARS models, interaction-effect modes, $M_{2}$ and
+$M_{3}$, perform non-trivially better than the main-effect model, $M_{1}$.
+Therefore, moisture content, temperature, and storage length of time affect
+fungal infection of stored rice jointly rather than mutually independently,
+implying that these three environmental factor should be monitored and
+controlled as a set, opposed to separate items, for the purpose of minimizing
+the hazard of fungal infection of stored rice. The most preferred one among
+three competing MARS models is $M_{3}$, the one capturing three-way
+interactions probably along with other low-order effects such as main and
+two-way interactions, suggesting that fungal infection may be minimized
+through joint optimization of moisture content, temperature, and storage
+length of time as a whole set.
+
+\subsubsection{Estimation Results for the Most Preferred Model, $M_{3}$}
+
+Estimates of all the unknown parameters of $M_{3}$, $\{\{\theta_{k}%
+\},\{s_{k,i}\}_{i},\{t_{k,i}\}_{i}\}_{k}$, are given in Table
+\ref{TAB_Estimates}. Table \ref{TAB_Estimates} contains only basis functions
+found to have significant, non-zero effects, and all the other basis functions
+that are not reported in Table 3 therefore show zero effects. In $M_{3}$,
+non-zero meaningfull main effects are found only for moisture content with a
+knot position 17, implying that main effect curve of moisture content may be
+non-linear. Note that response function becomes a linear function only when
+knot does not exist. In addition, significant non-zero two-way interactions
+are found for pairs of (i) moisture content and temperature, $\{m,l\}$ , and
+(ii) temperature and storage length of time, $\{t,l\}$. Finally, three-way
+interactions are significant in four sub-partitions: $\{m,t,\{l_{n}%
+\}_{l_{n}<2}\},$ $\{m,t,\{l_{n}\}_{l_{n}\geq2}\},\{\{m_{n}\}_{m_{n}%
+<17},t,l\},$and $\{\{m_{n}\}_{m_{n}\geq17},t,l\}$. More critically, all of
+these significant two- and three-way interaction basis functions have knots
+for a subset of three environmental factors, suggesting that interaction
+effects may have highly curved surface opposed to flat planes.
+%TCIMACRO{\TeXButton{B}{\begin{table}[tbp] \centering}}%
+%BeginExpansion
+\begin{table}[tbp] \centering
+%EndExpansion%
+\begin{tabular}
+[c]{cc}\hline
+Basis Function & Regression Coefficients ($\{\theta_{k}\}$)\\\hline
+\multicolumn{1}{l}{Intercept} & $86.1590$\\
+\multicolumn{1}{l}{$m_{n}-17$} & $-68.6797$\\
+\multicolumn{1}{l}{$(m_{n}-17)\times t_{n}$} & $12.9515$\\
+\multicolumn{1}{l}{$t_{n}\times(2-l_{n})$} & $67.7224$\\
+\multicolumn{1}{l}{$m_{n}\times t_{n}\times(2-l_{n})$} & $-5.1083$\\
+\multicolumn{1}{l}{$(m_{n}-17)\times t_{n}\times l_{n}$} & $-0.7266$\\\hline
+\end{tabular}
+\caption{Parameter Estimats of $M_{3}$\label{Table_Estimates}}\label{TAB_Estimates}%
+%TCIMACRO{\TeXButton{E}{\end{table}}}%
+%BeginExpansion
+\end{table}%
+%EndExpansion
+
+
+Fig. \ref{FIG_SURF} presents the estimated curved surface of moisture content
+and temperature across different storage length of time. It is evidently clear
+that surface of moisture content and temperature on fungal infection is not
+flat but highly curved regardless of storage lengths. Further detailed
+discussions on major findings follow. Hereafter, $f(v|w)$ denotes conditional
+function of $v$ on fungal infection given a value of $w$. For example, Fig.
+\ref{FIG_SURF} presents surface plots of joint conditional function of
+moisture content and temperature given storage length of time, i.e.
+$f(m,t|l)$.
+%TCIMACRO{\TeXButton{B}{\begin{figure}[tbp] \centering}}%
+%BeginExpansion
+\begin{figure}[tbp] \centering
+%EndExpansion%
+\begin{tabular}
+[c]{ll}%
+%TCIMACRO{\FRAME{itbpF}{3.1816in}{2.0626in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 3.1816in;  height 2.0626in;  depth 0in;  original-width 9.0105in;
+%original-height 5.8124in;  cropleft "0";  croptop "1";  cropright "0.9999";
+%cropbottom "0";  tempfilename 'surf1.bmp';tempfile-properties "XNPR";}}}%
+%BeginExpansion
+{\includegraphics[
+trim=0.000000in 0.000000in 0.000901in 0.000000in,
+natheight=5.812400in,
+natwidth=9.010500in,
+height=2.0626in,
+width=3.1816in
+]%
+{surf1.bmp}%
+}%
+%EndExpansion
+&
+%TCIMACRO{\FRAME{itbpF}{3.1816in}{2.0626in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 3.1816in;  height 2.0626in;  depth 0in;  original-width 9.0105in;
+%original-height 5.8124in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'surf2.bmp';tempfile-properties "XNPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=5.812400in,
+natwidth=9.010500in,
+height=2.0626in,
+width=3.1816in
+]%
+{surf2.bmp}%
+}%
+%EndExpansion
+\\%
+%TCIMACRO{\FRAME{itbpF}{3.1825in}{2.0626in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 3.1825in;  height 2.0626in;  depth 0in;  original-width 9.0105in;
+%original-height 5.8124in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'surf4.bmp';tempfile-properties "XNPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=5.812400in,
+natwidth=9.010500in,
+height=2.0626in,
+width=3.1825in
+]%
+{surf4.bmp}%
+}%
+%EndExpansion
+&
+%TCIMACRO{\FRAME{itbpF}{3.1825in}{2.0626in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 3.1825in;  height 2.0626in;  depth 0in;  original-width 9.0105in;
+%original-height 5.8124in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'surf8.bmp';tempfile-properties "XNPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=5.812400in,
+natwidth=9.010500in,
+height=2.0626in,
+width=3.1825in
+]%
+{surf8.bmp}%
+}%
+%EndExpansion
+\end{tabular}
+\caption{Surface Plots of Moisture Content and Temperature on Fungal Infection Score across Different Storage Length of Time}\label{FIG_SURF}%
+%TCIMACRO{\TeXButton{E}{\end{figure}}}%
+%BeginExpansion
+\end{figure}%
+%EndExpansion
+
+
+First, conditional effects of moisture content given temperature and storage
+length of time are non-linear. Examinations on estimated response function of
+moisture content conditional on temperature and storage length of time,
+$f(m|t,l)$, show that all the conditional functions of moisture content are
+kinked. In particular, the conditional functions of moisture content are
+kinked singly and doubly, respectively, for $l=l$ and $l>1$. Fig.
+\ref{FIG_CondMC} gives estimated conditional response function of moisture
+content, $f(m|t,l=1)$ and $f(m|t,l=4)$. As shown in Fig. \ref{FIG_CondMC}-(b),
+when storage length of time is four months, all the conditional functions of
+moisture content $f(m|t,l=4)$ seem to be kinked at moisture content of $17\%$,
+although $f(m|t=8%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$,l=4)$ is relatively flat -- see the knot estimate for moisture content,
+17\%, in Table \ref{TAB_Estimates}; this suggest that (i) if moisture content
+is lower than the knot 17\%, fungal infection rates remain low and flat
+regardless of temperature, (ii) if moisture content exceeds the knot position,
+fungal infection increases with an increase of moisture content, and (iii)
+rates of increase in fungal infection grow with an increase of temperature.
+Similar results are found for storage time length of 2 and 8 months,
+$f(m|t,l=\{2,8\})$ -- see Fig. \ref{FIG_SURF}. Interestingly, the conditional
+response function of moisture content given temperature and fixed storage
+length of one month, $f(m|t,l=1)$, is kinked singly and doubly, respectively,
+for $t=8%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C and $t>8%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C-- see Fig. \ref{FIG_CondMC}-(a); estimates of knots are $\{15.4%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$\}$, $\{14.2%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$,21.4%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$\}$,and $\{13.9%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$,20.5%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$\}$, respectively, for $t=8%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$,$ $18%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$,$ and $28%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C, implying that fungal infection remains low and flat in the ranges of
+$(11.5%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$,15.4%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$)$, $(14.2%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$,21.4%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$)$, and $(13.9%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$,20.5%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C$)$, respectively , for $t=8%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C, $18%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C, and $28%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C. These results together suggest, as a set, that it may be wise to (i) keep
+moisture content lower than 17\% regardless of temperature if storage length
+of time exceeds one month, and (ii) remain moisture content in the flat
+response range region regardless of temperature if storage length of time is
+rather short (e.g., one month). \
+%TCIMACRO{\TeXButton{B}{\begin{figure}[tbp] \centering}}%
+%BeginExpansion
+\begin{figure}[tbp] \centering
+%EndExpansion%
+\begin{tabular}
+[c]{ll}%
+%TCIMACRO{\FRAME{itbpF}{3.2641in}{2.1154in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 3.2641in;  height 2.1154in;  depth 0in;  original-width 9.2415in;
+%original-height 5.9614in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'cond_mc_1.bmp';tempfile-properties "XNPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=5.961400in,
+natwidth=9.241500in,
+height=2.1154in,
+width=3.2641in
+]%
+{cond_mc_1.bmp}%
+}%
+%EndExpansion
+&
+%TCIMACRO{\FRAME{itbpF}{3.2641in}{2.1154in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 3.2641in;  height 2.1154in;  depth 0in;  original-width 9.2415in;
+%original-height 5.9614in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'cond_mc4.bmp';tempfile-properties "XNPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=5.961400in,
+natwidth=9.241500in,
+height=2.1154in,
+width=3.2641in
+]%
+{cond_mc4.bmp}%
+}%
+%EndExpansion
+\end{tabular}
+\caption{Conditional Response Function of Moisture Content Given Temperature and Storage Length of Time}\label{FIG_CondMC}%
+%TCIMACRO{\TeXButton{E}{\end{figure}}}%
+%BeginExpansion
+\end{figure}%
+%EndExpansion
+
+
+Second, conditional effects of temperature given moisture content and storage
+length of time vary across different values of moisture content and/or storage
+length of time. Fig. \ref{FIG_CondTemp} presents estimates of two conditional
+response curves of temperature, $f(t|m,l=1)$ and $f(t|m,l=4)$. Note that
+estimates of $f(t|m,l=2)$and $f(t|m,l=8)$ are similar to the estimate of
+$f(t|m,l=4)$ in terms of functional shapes. It is readily seen that all the
+estimated conditional functions of temperature are linear except
+$f(t|m\geq22.5\%,l=1)$. As shown in Fig, \ref{FIG_SURF}-(b), if storage length
+of time exceeds one month, (i) fungal infection remains low and flat as long
+as moisture content is rather low, (ii) fungal infection increases with
+temperature increases if moisture content is rather high, and (iii) rates of
+increase grow with increases of moisture content regardless of temperature.
+However, when storage length of time is short (e.g., one month), (i) the
+conditional curves of temperature are linear if moisture content is lower than
+17\% and non-linear otherwise, and (ii) the conditional curves of temperature
+for $m\succeq22.5\%$ are singly kinked -- see Fig. \ref{FIG_SURF}-(a); these
+results suggest different optimal storage strategies depending upon functional
+shapes of estimated conditional function of temperature: (i) temperature does
+not matter if the estimated curve is flat, (ii) temperature needs to be lower
+than knot temperature if the estimated curve is kinked, and (iii) temperature
+should be kept as low as possible for the case of linear conditional curve. In
+particular, it is important to realize moisture content should be kept as low
+as possible regardless of temperature if rice is going to be stored for two
+months at least. However, if rice is going to be stored for short periods of
+time, say one month, the optimal value of moisture content may be 17\%
+primarily because moisture content of 11.5\% may lead to higher fungal
+infection than 17\% regardless of temperature.
+%TCIMACRO{\TeXButton{B}{\begin{figure}[tbp] \centering}}%
+%BeginExpansion
+\begin{figure}[tbp] \centering
+%EndExpansion%
+\begin{tabular}
+[c]{ll}%
+%TCIMACRO{\FRAME{itbpF}{3.2641in}{2.1154in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 3.2641in;  height 2.1154in;  depth 0in;  original-width 9.2415in;
+%original-height 5.9614in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'cond_temp1.bmp';tempfile-properties "XNPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=5.961400in,
+natwidth=9.241500in,
+height=2.1154in,
+width=3.2641in
+]%
+{cond_temp1.bmp}%
+}%
+%EndExpansion
+&
+%TCIMACRO{\FRAME{itbpF}{3.2641in}{2.1154in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 3.2641in;  height 2.1154in;  depth 0in;  original-width 9.2415in;
+%original-height 5.9614in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'cond_temp4.bmp';tempfile-properties "XNPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=5.961400in,
+natwidth=9.241500in,
+height=2.1154in,
+width=3.2641in
+]%
+{cond_temp4.bmp}%
+}%
+%EndExpansion
+\end{tabular}
+\caption{Conditional Response Function of Temperature Given Moisture Content and Storage Length of Time}\label{FIG_CondTemp}%
+%TCIMACRO{\TeXButton{E}{\end{figure}}}%
+%BeginExpansion
+\end{figure}%
+%EndExpansion
+
+
+Last, risks of fungal infection can be minimized by optimizing three
+environmental variables jointly, and not separately. Fig.
+\ref{FIG_CondContour} presents contour plots of $f(m,t|l=\{1,4\})$. Contour
+plots of $f(m,t|l=\{2,8\}$) are omitted simply because these plots are
+essentially similar to contour plot of $f(m,t|l=4)$, as discussed before. As
+shown in Fig. \ref{FIG_CondContour}-(b), when rice is going to be stored for
+two months at least, (i) fungal infection risk is low and flat regardless of
+temperature if moisture content is sufficiently low, (ii) fungal infection
+risk is low and flat regardless of moisture content if temperature content is
+sufficiently low, (iii) fungal infection risk increases with an increase of
+moisture content if both moisture content and temperature are high, and (iv)
+fungal infection risk increases with increases of both moisture content and
+temperature. These results implied in Fig. \ref{FIG_CondContour}-(b) confirm
+previous discussions on conditional marginal response functions. In addition,
+it is readily seen that Fig. \ref{FIG_CondContour}-(a) reconfirms all the
+previous discussions on conditional marginal response functions given $l=1$.
+%TCIMACRO{\TeXButton{B}{\begin{figure}[tbp] \centering}}%
+%BeginExpansion
+\begin{figure}[tbp] \centering
+%EndExpansion%
+\begin{tabular}
+[c]{l}%
+%TCIMACRO{\FRAME{itbpF}{4.6398in}{2.9998in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 4.6398in;  height 2.9998in;  depth 0in;  original-width 9.2202in;
+%original-height 5.9401in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'contour1.bmp';tempfile-properties "XNPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=5.940100in,
+natwidth=9.220200in,
+height=2.9998in,
+width=4.6398in
+]%
+{contour1.bmp}%
+}%
+%EndExpansion
+\\%
+%TCIMACRO{\FRAME{itbpF}{4.6398in}{2.9998in}{0in}{}{}{Figure}%
+%{\special{ language "Scientific Word";  type "GRAPHIC";
+%maintain-aspect-ratio TRUE;  display "USEDEF";  valid_file "T";
+%width 4.6398in;  height 2.9998in;  depth 0in;  original-width 9.2202in;
+%original-height 5.9401in;  cropleft "0";  croptop "1";  cropright "1";
+%cropbottom "0";  tempfilename 'contour4.bmp';tempfile-properties "XNPR";}}}%
+%BeginExpansion
+{\includegraphics[
+natheight=5.940100in,
+natwidth=9.220200in,
+height=2.9998in,
+width=4.6398in
+]%
+{contour4.bmp}%
+}%
+%EndExpansion
+\end{tabular}
+\caption{Contour Plots of Conditional Joint Surface of Moisture Content and Temperature}\label{FIG_CondContour}%
+%TCIMACRO{\TeXButton{E}{\end{figure}}}%
+%BeginExpansion
+\end{figure}%
+%EndExpansion
+
+
+\subsubsection{Inferences on Optimal Control of Rice Storage Environment}
+
+\bigskip Figures \ref{FIG_SURF} to \ref{FIG_CondContour} indicate, as a set,
+that the proposed MARS model may capture quite complicate interwoven, joint
+effects of moisture content, temperature, and storage time length on fungal
+infection risk. The estimated MARS model indeed enables one to make inferences
+on optimal values of three environmental factors in order to attain certain
+low level of fungal infection risk of stored rice by identifying optimal
+values of moisture content, temperature, and storage time length,
+$\widetilde{x}$ , by solving%
+\begin{equation}
+\widetilde{x}=\arg\min_{x}\widehat{f}(x),
+\end{equation}
+where $argmin$ is the argument operator for the minimum and $\widehat{f}$ is
+the predicted fungal infection scores given environmental factor
+$x=\{m,t,l\}$\}. In addition, it is possible to make various inferences on
+$\widetilde{x}$  conditionally as well as jointly, as discussed and
+illustrated before. For example, joint optimal values of three environmental
+factors can easily be identified simultaneously as a set (e.g., optimal values
+of moisture content, temperature, and storage time length) -- see figures
+\ref{FIG_SURF} and \ref{FIG_CondContour}. Furthermore, it is also quite
+straightforward to attain optimal values of a subset of the environmental
+factors conditional on fixed level of others (e.g., optimal percentage of
+moisture content when rice is going to be stored at 25$%
+%TCIMACRO{\U{b0}}%
+%BeginExpansion
+{{}^\circ}%
+%EndExpansion
+$C for 8 months) -- see figures  \ref{FIG_CondMC} and \ref{FIG_CondTemp}.
+
+\section{Discussion}
+
+All of the extant previous studies in the literature have been completely
+silent on nature and characterstics of curvature of effect spaces of moisture
+content, temperature, and storage length of time on fungal infection risk,
+primarily because none of previous studies have addressed a flexible,
+statistical model to capture interwoven effects of these three environmental
+factors. In this study, we proposed a flexible nonparametric MARS model for
+the purpose of empirical investigation on possible inter-dependent effects of
+three environmental factors on fungal infection of stored rice. The proposed
+model is fitted to a real rice storage data set. By doing so, we empirically
+examined the joint response surface of moisture content, temperature, and
+storage length of time on fungal infection risk. Note that none of extant
+previous studies have reported, empirically and explicitly, joint response
+curves of moisture content, temperature, and storage length of time on fungal
+infection.
+
+Through the real application, we demonstrated the proposed MARS model would be
+flexible enough to capture quite complex joint effects of these variables on
+fungal infection risk along with all the possible interactions. The proposed
+model, in fact, enables one to make inferences on (i) set of relevant,
+non-zero terms of terms of main and/or interaction effects of three
+environmental factors on fungal infection risk along with the nature of the
+effects in terms of functional shapes, curvature, and response surface, and
+(ii) the joint and/or conditional optimal values of three environmental
+factors to minimize the hazard of fungal infection of stored rice.
+
+To the best of our knowledge, this study is the first empirical modeling study
+on joint effects of moisture content, temperature, and storage length of time
+on fungal infection. Furthermore, the proposed model is quite general and
+flexible primarily because its applicability is not restricted to such three
+factors and it can, in fact, be readily extended to accomodate even a rather
+large number of environmental factors. However, all the discussions of
+conditional response functions and surfaces in this study are contingent upon
+on the data we used. In particular, the data set we used have only three to
+four levels in rather narrow ranges for each of three environmental variables
+-- see Table \ref{TAB_Data}. Therefore, a possibly fertile direction for
+future research may be to fit the proposed MARS model to relatively rich data
+with increases in (i) sample size of stored rice observations, (ii) the number
+of explanatory environmental factors, (iii) the number of levels for each of
+the environmental factors, and/or (iv) the ranges of values for each of the
+environmental factors.

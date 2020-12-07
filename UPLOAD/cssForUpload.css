@@ -102,30 +102,20 @@ main {
     position: relative;
     top: 50px;
     left: 15%;
-    right: 15%;
-    bottom: 15%;
+    /* right: 15%;
+    bottom: 15%; */
     width: 70%;
     /* margin-left:22%;
     margin-right:23%; */
     z-index: 3;
-    /* top: 100px; */
-    /* bottom: 100px; */
-    /* position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: 1500px;
-    margin-left: 200px;
-    margin-right: 200px;
-    z-index: 3; */
 }
 
 .main-page-inner-with-nav {
     position: relative;
-    align-items: center;
-    margin-left:22%;
-    margin-right:23%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    left: 23%;
     width: 70%;
     z-index: 3;
     top:50px;
@@ -193,6 +183,7 @@ a{
 .main-menu {
     display: flex;
     align-content: center;
+    /* overflow-x: auto; */
 }
 
 .sub-menu {
@@ -211,6 +202,8 @@ a{
     font-size:28px;
     padding: 5px 10px 5px 10px;
     border-radius: 5px 5px 0 0;
+    overflow-x: hidden;
+    text-align: center;
 }
 
 .sub-menu .without-content{
@@ -220,6 +213,8 @@ a{
     font-size:28px;
     padding: 5px 10px 5px 10px;
     border-radius: 5px 5px 5px 5px;
+    overflow-x: hidden;
+    text-align: center;
 }
 
 .sub-menu .with-content:hover {
@@ -291,8 +286,6 @@ a{
     }
     }
 
-
-
 .circle1{
     position: absolute;
     background-color:#FFC0A9;
@@ -345,12 +338,28 @@ a{
 .paragraph {
     padding-left: 3rem;
     border-left: 5px solid #C9D787;
-    width: 100%;
-    margin: 30px 0 30px 0;
+    width: 90%;
+    margin: 30px 0 80px 0;
+}
+
+.paragraph-citation {
+    padding-left: 3rem;
+    border-left: 5px solid #C9D787;
+    width: 90%;
+    margin: 30px 0 80px 0;
+}
+
+.paragraph-citation div {
+    padding-left:1.5em;
+    text-indent:-1.5em;
 }
 
 .paragraph > div {
-    margin: 40px;
+    margin: 10px 40px 70px 40px;
+}
+
+.paragraph .margin-div {
+    margin: 10px 40px 70px 40px;
 }
 
 
@@ -363,6 +372,7 @@ a{
 
 .green-h1 {
     color: #7D8A2E;
+    margin-top: 50px;
 }
 
 .page-title {
@@ -395,13 +405,12 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1240px;
+    width: 940px;
     background-color: #C9D787;
     padding: 0 5px 0 5px;
 }
 
 .poster-wrapper > img {
-    width: 400px;
     margin: 10px 5px 10px 5px;
 }
 
@@ -599,14 +608,15 @@ nav {
 .nav-a a{
     color:white;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
     padding: 5px;
     text-decoration: none;
-    line-height: 200%;
+    line-height: 150%;
 }
 
 .nav-a a:hover{
     color:#7D8A2E;
+    padding-bottom: -5px;
     border-bottom: solid 2px white;
     text-decoration: none;
 }

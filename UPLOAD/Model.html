@@ -20,7 +20,9 @@
         <div class="navbar">
           <div class="main-menu">
             <div class="sub-menu">
-              <a class="without-content" href="https://2020.igem.org/Team:Korea-SIS" onmouseover="this.style.backgroundColor='#C9D787'" onmouseout="this.style.backgroundColor='#7D8A2E'">Home</a>
+              <a class="without-content" href="https://2020.igem.org/Team:Korea-SIS" onmouseover="this.style.backgroundColor='#C9D787'" onmouseout="this.style.backgroundColor='#7D8A2E'">
+                Home&nbsp;
+              </a>
             </div>
             <div class="sub-menu">
               <a class="with-content">Team</a>
@@ -42,21 +44,24 @@
               </div>
             </div>
             <div class="sub-menu">
-              <a class="with-content">Human Practices</a>
-              <div class="sub-menu-content">
-                <div><a href="https://2020.igem.org/Team:Korea-SIS/Human_Practices">Introduction</a></div>
-                <div><a href="https://2020.igem.org/Team:Korea-SIS/Campaign">Campaign</a></div>
-                <div><a href="https://2020.igem.org/Team:Korea-SIS/Education">Education</a></div>
-                <div><a href="https://2020.igem.org/Team:Korea-SIS/Interviews">Interviews</a></div>
-                <div><a href="https://2020.igem.org/Team:Korea-SIS/Survey">Survey Analysis</a></div>
-                <div><a href="https://2020.igem.org/Team:Korea-SIS/Intergrated">Intergrated Human Practices</a></div>
-              </div>
+              <a class="without-content" href="https://2020.igem.org/Team:Korea-SIS/Human_Practices" onmouseover="this.style.backgroundColor='#C9D787'" onmouseout="this.style.backgroundColor='#7D8A2E'">
+                Human Practices&nbsp;
+              </a>
             </div>
             <div class="sub-menu">
-              <a class="without-content" href="https://2020.igem.org/Team:Korea-SIS/Judging" onmouseover="this.style.backgroundColor='#C9D787'" onmouseout="this.style.backgroundColor='#7D8A2E'">Judging Form</a>
+              <a class="without-content" href="https://2020.igem.org/Team:Korea-SIS/Education" onmouseover="this.style.backgroundColor='#C9D787'" onmouseout="this.style.backgroundColor='#7D8A2E'">
+                Education&nbsp;
+              </a>
             </div>
             <div class="sub-menu">
-              <a class="without-content" href="https://2020.igem.org/Team:Korea-SIS/Safety" onmouseover="this.style.backgroundColor='#C9D787'" onmouseout="this.style.backgroundColor='#7D8A2E'">Safety</a>
+              <a class="without-content" href="https://2020.igem.org/Team:Korea-SIS/Judging" onmouseover="this.style.backgroundColor='#C9D787'" onmouseout="this.style.backgroundColor='#7D8A2E'">
+                Judging Form&nbsp;
+              </a>
+            </div>
+            <div class="sub-menu">
+              <a class="without-content" href="https://2020.igem.org/Team:Korea-SIS/Safety" onmouseover="this.style.backgroundColor='#C9D787'" onmouseout="this.style.backgroundColor='#7D8A2E'">
+                Safety&nbsp;
+              </a>
             </div>  
           </div>
         </div>
@@ -77,95 +82,26 @@
         <div class="main-page-inner-with-nav">
         <h1>Modeling</h1>
           <div class="paragraph">
-            <div>
-              The aim here is to model the possible inter-woven effects of the three environmental factors on fungal infection of stored rice. Suppose that a researcher has collected data of the environmental factors and fungal
+            <div class="image-wrapper" style="flex-direction: column;">
+              <img style="margin-left: -150px;" src="https://2020.igem.org/wiki/images/9/97/T--Korea-SIS--model_0.png">
+              <img style="margin-left: -150px;" src="https://2020.igem.org/wiki/images/e/e1/T--Korea-SIS--model_1.png">
+              <img style="margin-left: -150px;" src="https://2020.igem.org/wiki/images/c/c2/T--Korea-SIS--model_2.png">
+              <img style="margin-left: -150px;" src="https://2020.igem.org/wiki/images/f/f2/T--Korea-SIS--model_3.png">
+              <img style="margin-left: -150px;" src="https://2020.igem.org/wiki/images/f/f6/T--Korea-SIS--model_4.png">
+              <img style="margin-left: -150px;" src="https://2020.igem.org/wiki/images/0/02/T--Korea-SIS--model_5.png">
+              <img style="margin-left: -150px;" src="https://2020.igem.org/wiki/images/9/9d/T--Korea-SIS--model_6.png">
+              <img style="margin-left: -150px;" src="https://2020.igem.org/wiki/images/1/11/T--Korea-SIS--model_7.png">
+              <img style="margin-left: -150px;" src="https://2020.igem.org/wiki/images/8/88/T--Korea-SIS--model_8.png">
+              <img style="margin-left: -150px;" src="https://2020.igem.org/wiki/images/2/2b/T--Korea-SIS--model_9.png">
+              <img style="margin-left: -150px;" src="https://2020.igem.org/wiki/images/0/0d/T--Korea-SIS--model_10.png">
+              <img style="margin-left: -150px;" src="https://2020.igem.org/wiki/images/f/f2/T--Korea-SIS--model_11.png">
             </div>
-            <div>
-              infections, $\{x_{n},y_{n}\}_{n=1}^{N}$, from $N$ samples of stored rice obtained across different storage places as well as over different time
-            </div>
-            <div>
-              periods. Here, $x_{n}=(m_{n},t_{n},l_{n})^{^{\prime}}$ denotes moisture content ($m_{n}$), temperature ($t_{n}$), and storage length of time ($l_{n}$) of rice sample $n$ ($n=1,...,N$). In addition, $y_{n}$ indicates fungal
-            </div>
-            <div>
-              infection mesure of the rice sample $x_{n}$. Then, our modeling take here is to capture a relationship between $x_{n}$ and $y_{n}$:%
-            </div>
-            <div>
-              \begin{equation}
-              y_{n}=f(x_{n})+\varepsilon_{n},\text{ }n=1,\ldots,N,\label{general_y}% 
-              \end{equation}
-            </div>
-            <div>
-              where $f(\cdot)$ is an unknown regression function that we wish to estimate and $\varepsilon_{n}$ is an error term with mean 0. The regression function $f$ gives the predictive relationship of an $N$-dimensional response vector $y=(y_{1},\ldots,y_{N})^{^{\prime}}$ on an $N\times3$ design matrix $x=(x_{1}^{^{\prime}},\ldots,x_{N}^{^{\prime}})^{^{\prime}}$, i.e. the conditional expectation of $y$ given $x$, $E(y)=f(x)$. Then, if $f$ is
-            </div>
-            <div>
-              estimated and available, it is straightforward to use the function $f$ to predict a value of $y_{N+1}$ given a new, environemental design variable $x_{N+1}\notin x.$
-            </div>
-            <div>
-              In this study, the function $f$ is not fixed in a parametric form (e.g., a
-            </div>
-            <div>
-              linear function with unknown parameters $(\alpha,\beta,\gamma)$, $f(x_{n})=\alpha m_{n}+\beta t_{n}+\gamma l_{n}$. Specifically, $f$ is presumed to be unknown completely so that $f$ itself is a unknown paramter to be estimated. In particular, the function is going to be estimated nonparametrically without any constraints on its functional shape. In the statistics literature, a large number of nonparametric regression models have been developed for the estimation of unknown function $f$ in a flexible, adaptive way (cf. Takezawa 2005). In this study, the function $f$ is estimated non-parametrically on the basis of multivariate adaptive regression spline (MARS) model (Denison et al. 1998; Friedman 1991, 1993).
-            </div>
-            <div>
-              Suppose that the whole data domain $x$ is partitioned into $K$ distinct sub-domains: $x_{1}^{p},\ldots,x_{K}^{p}$. Then, $f$ can be represented by a partition regression model as follows:%
-            </div>
-            <div>
-              \begin{equation}
-              f=\sum_{k=1}^{K}\theta_{k}B_{k}(x),\label{partitioned}%
-              \end{equation}              
-            </div>
-            <div>
-              where $\theta_{k}$ and $B_{k}(x)$ denote, respectively, regression coefficient and basis function associated with the $k$-th partition, $x_{k}^{p}$. In the MARS model, the partitions have two-level hierarchy structure along with interactions and knots -- detailed discussions follow.
-            </div>
-            <div>
-              Let $\#(x)$ denote the total number of columns in $x$, i.e. the total number
-            </div>
-            <div>
-              of explanatory variables -- for example, $3$ in our study. Let $d=R(x)$
-            </div>
-            <div>
-              denotes the number of relevant explanatory variables in $x$; here, relevant explanatory variables denote those which have non-zero effects on $y$. The values of $d$, therefore, range from $0$ to $\#(x)$; the value $d=0$ indicates that all explanatory variables in $x$ show zero-effects on $y$, and $d>1$
-            </div>
-            <div>
-              means that $d$ explanatory variables exhibit non-zero effects while others do
-            </div>
-            <div>not affect $y$. Note that the number of possible configurations of design</div>
-            <div>matrix varies across different values of $d$: specifically, the number of $d$-combination of explanatory variables is $\binom{\#(x)}{d}$, that is the binomial coefficient. For example, in our study, there are three distinct</div>
-            <div>subsets of $x$ for $d=1$: $m=(m_{1},\ldots,m_{N})^{^{\prime}}$, $t=(t_{1}% ,\ldots,t_{N})^{^{\prime}}$, and $l=(l_{1},\ldots,l_{N})^{^{\prime}}$.						</div>
-            <div>Next, each of the first level partitions of $x$, $x_{1}^{p1},\ldots,x_{K1}^{p1}$, defined across different values of $d$, is further divided into several sub-partition along with the second level variable, knots. In the MARS model, the knot configurations -- the numbers and the locations of knots --</div>
-            <div>are also unknown parameters to be estimated; specifically, knot configurations may differ across the first level partitions $x_{1}^{p1},\ldots,x_{K1}^{p1}$ as well as across $R(x_{k}^{p1})$ explanatory variables in $x_{k}^{p1}$, $k=1,\ldots,K1$. Finally, the second-level partitions become the final $K$ distinct partitions $x_{1}^{p},\ldots,x_{K}^{p}$. Then, the MARS model formulates the basis function as follows:%					</div>
-            <div>
-              \[
-              B_{k}(x)=\left\{
-              \begin{array}
-              [c]{c}%
-              1,\text{ if }\#(x_{k}^{p})=0,\\%
-              %TCIMACRO{\dprod \limits_{i=1}^{\#(x_{k}^{p})}}%
-              %BeginExpansion
-              {\displaystyle\prod\limits_{i=1}^{\#(x_{k}^{p})}}
-              %EndExpansion
-              \left[ s_{k,i}\times(x_{k,i}^{p}-\tau_{k,i})\right] _{+},\text{ otherwise,}% 
-              \end{array}
-              \right.
-              \]
-            </div>
-            <div>where $a_{+}=\max(0,a)$ is a truncation operator, $x_{k,i}^{p}$ denotes the $i$-th element ($i=1,\ldots,\#(x_{k}^{p})$) of $x_{k}^{p}$, $s_{k,i}% \in\{1,-1\}$ is the sign for $x_{k,i}^{p}$, and $\tau_{k,i}$ is a split, knot point for $x_{k,i}^{p}$. Note that the knot configurations $\{\tau_{k,i}\}$ may vary across different partitions as well as across different explanatory variables in a given partition.					</div>
-            <div>It is clear that $B_{k}(x)$ captures only an intercept term if $\#(x_{k}% ^{p})=0$. If the value of $\#(x_{k}^{p})$ is one, then only one element of $x_{k}^{p}$ has a non-zero main effect. In particular, when the value of $\#(x_{k}^{p})$ is greater than one, $\#(x_{k}^{p})$ elements of $x_{k}^{p}$ exhibit a $\#(x_{k}^{p})$-way interaction effect. Therefore, it is easy to</div>
-            <div>realize that the first level partition $\{x_{k}^{p1}\}$, corresponds to interaction effects. Given a particular partition at the first level, the</div>
-            <div>partition $\{x_{k}^{p1}\}$ can be further divided into sub-partitions across different knot configurations $\{\tau_{k,i}\}$: note that $\tau_{k,i}$ is a unknown parameters to be estimated. Therefore, it is easy to see that the MARS have a two-level partition structure. Finally, in the MARS model, all the unknown parameters to be estimated are $\{\{\theta_{k}\},\{s_{k,i}% \}_{i},\{t_{k,i}\}_{i}\}_{k}$.\ </div>
-            <div>Effectively, we proposed a flexible nonparametric MARS model designed to capture possible inter-dependent effects of three environmental factors on fungal infection of stored rice. The proposed model is fitted to a real rice data set. By doing so, we reported empirical results on the joint response surface of moisture content, temperature, and storage length of time on fungal infection. Note that none of extant previous studies have reported, empirically and explicitly, joint response curves of moisture content, temperature, and storage length of time on fungal infection. </div>
-            <div>Through the real application, we demonstrated the proposed MARS model is flexible enough to capture quite complicated joint effects of these variables on fungal infection along with all the possible interactions. The proposed model, in fact, enables one to make inferences (i) on set of relevant, non-zero terms of terms of main and/or interaction effects of three environmental factors on fungal infection risk along with the nature of the effects in terms of functional shapes, curvature, and surface, and (ii) on the joint and/or conditional optimal values of three environmental factors to minimize the hazard of fungal infection of stored rice.</div>
-            <div>Even though this study is the first empirical modeling study on joint effects of moisture content, temperature, and storage length of time on fungal infection, all the discussions of conditional response functions are contingent upon the data we used. In particular, the data set we used has only three to four levels in rather narrow ranges for each of three environmental variables – see Table 1. Therefore, a good direction for future study may be to fit the proposed MARS model to relatively rich data with increases in (i) the large number of observations, (ii) the number of explanatory environmental variables, (iii) the numbers of levels for each of explanatory variables, and/or the ranges of explanatory variables.</div>
-
-          </div>
-          <div class="paragraph">
-            <embed width="100%" height="1400px" src="https://2020.igem.org/wiki/images/b/b2/T--Korea-SIS--Model.pdf">
           </div>
         </div>
       </div>
     </main>
     
-    <footer>
+    <footer style="margin-bottom: -40px;">
       <div class="footer-image-wrapper">
         <img src="https://2020.igem.org/wiki/images/0/0d/T--Korea-SIS--footer.png" />
       </div>
